@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/scrollcue.min.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+
+    <title>Karpedo Dondurma | Kendinize Bir Tatlılık Yapın</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+
+<body>
+
+
+    <div class="preloader-area" id="preloader">
+        <video autoplay loop muted>
+            <source src="assets/img/icecream.webm" type="video/mp4">
+        </video>
+        <span>yükleniyor...</span>
+    </div>
+
+
+
+    <div class="switch-theme-mode">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+
+    <div class="cursor"><span class="cursor-text"></span></div>
+    <div class="cursor-inner"></div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+
+            <div class="navbar-top style-one bg-title">
+                <div class="container style-one">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-4 col-lg-4 col-4 text-lg-start text-center mb-lg-0 mb-2">
+                            <p class="position-relative text-white d-inline-block text-lg-start text-center fs-15 mb-0">
+                                <img src="assets/img/icons/phone-small.svg" alt="Icon">+90 (344) 236 06 37
+                            </p>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-8 mb-lg-0 mb-1">
+                            <div
+                                class="social-share d-flex flex-wrap align-items-center justify-content-lg-end justify-content-center">
+                                <span class="fs-15 text-white">Takip Edin:</span>
+                                <ul class="social-profile style-six list-unstyled mb-0">
+                                    <li><a href="https://www.facebook.com/" target="_blank"
+                                            class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
+                                                class="ri-facebook-fill"></i></a></li>
+                                    <li><a href="https://x.com/?lang=en" target="_blank"
+                                            class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
+                                                class="ri-twitter-x-line"></i></a></li>
+                                    <li><a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                                            class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
+                                                class="ri-instagram-line"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/" target="_blank"
+                                            class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
+                                                class="ri-linkedin-fill"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="navbar-area style-two position-relative" id="navbar">
+                <div class="container style-one">
+                    <div class="navbar-wrapper d-flex justify-content-center align-items-center">
+                        <a href="index.html" class="mobilelogo">
+                            <img src="assets/img/karpedo_logo.png" />
+                        </a>
+                        <div class="menu-area me-4">
+                            <div class="overlay"></div>
+                            <nav class="menu">
+                                <div class="menu-mobile-header">
+                                    <button type="button" class="menu-mobile-arrow bg-transparent border-0"><i
+                                            class="ri-arrow-left-s-line"></i></button>
+                                    <div class="menu-mobile-title"></div>
+                                    <button type="button" class="menu-mobile-close bg-transparent border-0"><i
+                                            class="ri-close-line"></i></button>
+                                </div>
+                                <ul class="menu-section p-0 mb-0 ms-0 lh-1 d-flex align-items-center">
+                                    <li><a class="active" href="index.html">Anasayfa</a></li>
+                                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0)">Ürünler<i class="ri-add-line"></i></a>
+                                        <ul class="menu-subs menu-column-1">
+                                            <li><a href="urunler.html">Kesme Dondurma</a></li>
+                                            <li><a href="urunler.html">Karışık Dondurma</a></li>
+                                            <li><a href="urunler.html">Çikolatalı Dondurma</a></li>
+                                            <li><a href="urunler.html">Bademli Dondurma</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nvb_li">
+                                        <a href="index.html" class="navbar-brand">
+                                            <img src="assets/img/karpedo_logo.png" alt="Logo" class="logo-light">
+                                            <img src="assets/img/logo_dark.png" alt="Logo" class="logo-dark">
+                                        </a>
+                                    </li>
+                                    <li><a href="#">E-Katalog</a></li>
+                                    <li><a href="blog_liste.html">Blog</a></li>
+                                    <li><a href="iletisim.html">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="other-options d-flex flex-wrap align-items-center justify-content-end">
+                            <div class="option-item">
+                                <ul class="option-list d-flex flex-wrap align-items-center list-unstyled mb-0">
+                                    <li>
+                                        <div class="mobile-options position-relative d-lg-none">
+                                            <div class="dropdown-menu dropdown-menu-centered mobile-option-list top-1 border-0"
+                                                data-bs-popper="static">
+                                                <a href="contact.html"
+                                                    class="btn style-three position-relative z-1 round-10">Get In
+                                                    Touch</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="option-item d-lg-none">
+                                <button type="button" class="menu-mobile-trigger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section class="hero-area style-two bg-f position-relative z-1">
+                <img src="assets/img/hero/shape-3.png" alt="Shape"
+                    class="hero-shape-three position-absolute z-n1 bounce">
+                <img src="assets/img/hero/shape-1.png" alt="Shape"
+                    class="hero-shape-one position-absolute z-n1 animationFramesTwo">
+                <img src="assets/img/hero/shape-2.png" alt="Shape"
+                    class="hero-shape-two position-absolute z-n1 moveHorizontal">
+                <div class="container style-one">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="hero-content mb-lg-30">
+                                <h6 class="section-subtile fs-xxl-20 fw-light text_primary mb-6">Karpedo Dondurma</h6>
+                                <h1>Kendinize Bir Tatlılık Yapın</h1>
+                                <p class="fs-xxl-18 pe-xl-5">El yapımı dondurmanın verdiği mutluluk gibisi yoktur; biz
+                                    de Karpedo olarak bu deneyimi en üst seviyeye taşıyoruz. En kaliteli malzemelerle,
+                                    geleneksel yöntemlerle hazırladığımız her bir kaşıkta gerçek lezzeti sunuyoruz.</p>
+                                <div class="btn-wrap d-flex flex-wrap align-items-center gap-3">
+                                    <a href="#" class="btn style-two position-relative z-1 round-10">Ürünlerimizi
+                                        İnceleyin</a>
+                                    <a data-fslightbox="video1" href="https://www.youtube.com/watch?v=u31qwQUeGuM"
+                                        class="play-btn style-one d-flex flex-wrap align-items-center transition">
+                                        <span
+                                            class="play-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
+                                                class="ri-play-large-fill"></i></span>
+                                        <span class="text-title fw-bold play-text">Tanıtım Filmimizi İzleyin</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-slider-wrap style-one d-flex flex-wrap align-items-center">
+                                <div class="hero-slider-one swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="hero-slide-item">
+                                                <img src="assets/img/hero/hero-slide-3.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="hero-slide-item">
+                                                <img src="assets/img/hero/hero-slide-2.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="hero-slide-item">
+                                                <img src="assets/img/hero/hero-slide-1.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper hero-thumbslider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="hero-thumb d-flex flex-column justify-content-center align-items-center rounded-circle bg-white">
+                                                <img src="assets/img/hero/hero-slide-3.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="hero-thumb d-flex flex-column justify-content-center align-items-center rounded-circle bg-white">
+                                                <img src="assets/img/hero/hero-slide-2.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="hero-thumb d-flex flex-column justify-content-center align-items-center rounded-circle bg-white">
+                                                <img src="assets/img/hero/hero-slide-1.png" alt="Image"
+                                                    class="d-block mx-auto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="category-area pt-120 pb-90">
+                <div class="container style-one">
+                    <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Keşfedin</h6>
+                    <h2 class="section-title style-one fw-normal text-title text-center mb-45">Ürün Çeşitlerimiz
+                    </h2>
+                    <div
+                        class="category-card-wrap style-one d-flex flex-wrap justify-content-xxl-between justify-content-center">
+                        <div class="category-card style-one text-center mb-30">
+                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                <img src="assets/img/category/gelato.jpg" alt="Image" class="rounded-circle transition">
+                                <a href="urunler.html" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                            </div>
+                            <h3 class="fs-24 fw-normal"><a href="urunler.html"
+                                    class="text-title link-hover-primary">Baton Dondurma</a></h3>
+                            <span>(10 Ürün)</span>
+                        </div>
+                        <div class="category-card style-one text-center mb-30">
+                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                <img src="assets/img/category/icecream.jpg" alt="Image"
+                                    class="rounded-circle transition">
+                                <a href="urunler.html" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                            </div>
+                            <h3 class="fs-24 fw-normal"><a href="urunler.html"
+                                    class="text-title link-hover-primary transition">Reyon Dondurma</a></h3>
+                            <span>(18 Ürün)</span>
+                        </div>
+                        <div class="category-card style-one text-center mb-30">
+                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                <img src="assets/img/category/yogurt.jpg" alt="Image" class="rounded-circle transition">
+                                <a href="urunler.html" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                            </div>
+                            <h3 class="fs-24 fw-normal"><a href="urunler.html"
+                                    class="text-title link-hover-primary transition">Kase Dondurma</a></h3>
+                            <span>(14 Ürün)</span>
+                        </div>
+                        <div class="category-card style-one text-center mb-30">
+                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                <img src="assets/img/category/rolled-icecream.jpg" alt="Image"
+                                    class="rounded-circle transition">
+                                <a href="urunler.html" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                            </div>
+                            <h3 class="fs-24 fw-normal"><a href="urunler.html"
+                                    class="text-title link-hover-primary transition">Maraş Kesme</a></h3>
+                            <span>(12 Ürün)</span>
+                        </div>
+                        <div class="category-card style-one text-center mb-30">
+                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                <img src="assets/img/category/banana-iceream.jpg" alt="Image"
+                                    class="rounded-circle transition">
+                                <a href="urunler.html" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                            </div>
+                            <h3 class="fs-24 fw-normal"><a href="urunler.html"
+                                    class="text-title link-hover-primary transition">Kol Dondurma</a></h3>
+                            <span>(11 Ürün)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="feature-area pb-120">
+                <div class="container style-one">
+                    <div class="row gx-xxl-18 justify-content-center">
+                        <div class="col-xl-4 col-md-6">
+                            <div
+                                class="featured-product style-two bg-1 position-relative img-hover-wrap round-30 mb-30">
+                                <div class="feature-info text-center">
+                                    <h6 class="font-primary fw-medium text_primary fs-16">Karpedo Gerçek Meyveli</h6>
+                                    <h3 class="fw-light text-title mb-10">Gerçek Dondurma Gerçek Meyve</h3>
+                                    <p class="fs-xxl-18 fw-normal text-title mb-35">Mevsiminde toplanmış taptaze
+                                        meyvelerle hazırlanır</p>
+                                </div>
+                                <div class="feature-img overflow-hidden">
+                                    <img src="assets/img/featured/feature-1.jpg" alt="Image" class="transition">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div
+                                class="featured-product style-two bg-2 position-relative img-hover-wrap round-30 mb-30">
+                                <div class="feature-info text-center">
+                                    <h6 class="font-primary fw-medium text-white fs-16">Karpedo Lezzetli</h6>
+                                    <h3 class="fw-light text-white mb-10">Hafif Lezzet Düşük Kalori</h3>
+                                    <p class="fs-xxl-18 fw-normal text-white mb-0">Yumuşak dokusu ve kremsi yapısıyla
+                                        damaklarda iz bırakır</p>
+                                </div>
+                                <div class="feature-img overflow-hidden">
+                                    <img src="assets/img/featured/feature-2.jpg" alt="Image" class="transition">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div
+                                class="featured-product style-two bg-3 position-relative img-hover-wrap round-30 mb-30">
+                                <div class="feature-info text-center">
+                                    <h6 class="font-primary fw-medium text_primary fs-16">Karpedo Doğal</h6>
+                                    <h3 class="fw-light text-title mb-10">Temiz İçerik Doğal Kaynak</h3>
+                                    <p class="fs-xxl-18 fw-normal text-title mb-35">Gizli şeker
+                                        barındırmayan, en doğal malzemeli atıştırmalık</p>
+                                </div>
+                                <div class="feature-img overflow-hidden">
+                                    <img src="assets/img/featured/feature-3.jpg" alt="Image" class="transition">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container style-one">
+                <div class="offer-area style-two bg-f position-relative z-1 round-30">
+                    <img src="assets/img/discount/discount-product-3.png" alt="Image" class="offer-img-one z-n1">
+                    <div class="container text-center">
+                        <div class="ft_inner">
+                            <h6 class="section-subtile fs-20 fw-light text_primary mb-10">Something For Everyone</h6>
+                            <h2 class="section-title style-one fw-normal text-title mb-15">Dondurma ustalarının mahir
+                                ellerinden benzersiz bir lezzet... </h2>
+                            <p class="fs-xxl-18 text-center text-title mb-30">Firmamız Kahramanmaraş
+                                Dulkadiroğlu’nda
+                                100 m2
+                                alanda 1995 yılında Kahramanmaraş dondurması üretimine başlayıp bugün 10.000 m2
+                                alanda,
+                                33
+                                çeşit dondurma üretimi yapmaktadır.</p>
+                            <p class="fs-xxl-18 text-center text-title mb-30">Kahramanmaraş dondurmasının 300 yıllık
+                                özel tarifi ve yapımını bilen geleneksel
+                                ustalarımız ile akademik kısımda bulunan gıda mühendislerimizin bilgilerinin
+                                harmanlanması ile Karpedo Dondurmanın tadına tad, gücüne güç katmıştır.</p>
+                            <a href="hakkimizda.html"
+                                class="btn style-three position-relative z-1 round-10">Hakkımızda</a>
+                        </div>
+                    </div>
+                    <div class="offer-img-two position-absolute bottom-0 end-0 z-n1">
+                        <img src="assets/img/discount/discount-product-4.png" alt="Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container style-one pt-120 pb-90">
+                <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Blog</h6>
+                <h2 class="section-title style-one fw-normal text-title text-center mb-45">Lezzete Lezzet Katacak
+                    Bloglar
+                </h2>
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="blog-card style-two img-hover-zoom round-20 mb-30">
+                            <div class="br-hover position-absolute"></div>
+                            <div class="blog-img position-relative img-zoom overflow-hidden round-15">
+                                <img src="assets/img/blog/blog-3.jpg" alt="Image"
+                                    class="position-absolute top-0 start-0 w-100 h-100 round-15 transition">
+                                <img src="assets/img/blog/blog-3.jpg" alt="Image" class="round-15 transition">
+                                <a href="#"
+                                    class="blog-date fs-14 position-absolute d-flex flex-column align-items-center justify-content-center bg-white round-10 text-para transition">
+                                    <span class="fs-20 fw-semibold text-title d-block">20</span>
+                                    Eyl
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h3 class="fs-24"><a href="#"
+                                        class="text-title link-hover-secondary transition">Karpedo’nun Sırrı: Geleneksel
+                                        Maraş Usulü Dondurma</a></h3>
+                                <a href="#" class="btn style-five position-relative z-1 round-10">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="blog-card style-two img-hover-zoom round-20 mb-30">
+                            <div class="br-hover position-absolute"></div>
+                            <div class="blog-img position-relative img-zoom overflow-hidden round-15">
+                                <img src="assets/img/blog/blog-4.jpg" alt="Image"
+                                    class="position-absolute top-0 start-0 w-100 h-100 round-15 transition">
+                                <img src="assets/img/blog/blog-4.jpg" alt="Image" class="round-15 transition">
+                                <a href="#"
+                                    class="blog-date fs-14 position-absolute d-flex flex-column align-items-center justify-content-center bg-white round-10 text-para transition">
+                                    <span class="fs-20 fw-semibold text-title d-block">22</span>
+                                    Eyl
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h3 class="fs-24"><a href="#" class="text-title link-hover-secondary transition">Doğadan
+                                        Gelen Serinlik: Gerçek Meyve Taneleriyle Tanışın</a>
+                                </h3>
+                                <a href="#" class="btn style-five position-relative z-1 round-10">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="blog-card style-two img-hover-zoom round-20 mb-30">
+                            <div class="br-hover position-absolute"></div>
+                            <div class="blog-img position-relative img-zoom overflow-hidden round-15">
+                                <img src="assets/img/blog/blog-5.jpg" alt="Image"
+                                    class="position-absolute top-0 start-0 w-100 h-100 round-15 transition">
+                                <img src="assets/img/blog/blog-5.jpg" alt="Image" class="round-15 transition">
+                                <a href="#"
+                                    class="blog-date fs-14 position-absolute d-flex flex-column align-items-center justify-content-center bg-white round-10 text-para transition">
+                                    <span class="fs-20 fw-semibold text-title d-block">25</span>
+                                    Eyl
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h3 class="fs-24"><a href="#"
+                                        class="text-title link-hover-secondary transition">Dondurmanın En Tatlı
+                                        Eşlikçileri: Sunum Önerileri</a></h3>
+                                <a href="#" class="btn style-five position-relative z-1 round-10">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container style-one pb-90" id="tgs09">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/traditional.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">Geleneksel Lezzet</h3>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/soft.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">Yumuşak Doku</h3>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/calorie.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">Düşük Kalori</h3>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/contact.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">Müşteri Desteği</h3>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/strawberry.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">%100 Organik</h3>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-6">
+                        <div class="category-card style-two position-relative text-center mb-30">
+                            <img src="assets/img/icons/fruit.png" alt="Icon" class="d-block mx-auto mb-25">
+                            <h3 class="fs-24 fw-normal mb-0 transition">Gerçek Meyve</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container style-one">
+                <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
+                <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
+                </h2>
+            </div>
+            <div class="insta-slider-three swiper pb-120">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/1.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/2.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/3.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/4.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/5.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/6.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/7.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/8.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/9.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/10.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/11.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/12.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/13.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                            class="insta-card style-two position-relative round-20">
+                            <img src="assets/img/instagram/14.jpg" alt="Image" class="round-20">
+                            <span
+                                class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
+                                    class="ri-instagram-line"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer class="footer-area style-two position-relative z-1">
+                <div class="footer-top bg-f position-relative z-1 pt-120">
+                    <div class="container style-one pb-90">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-5 pe-xxl-5 mb-lg-20">
+                                <h2 class="section-title style-one me-xxl-4 mb-0">Doğanın kalbinden, ustalığın
+                                    zirvesine: Gerçek Maraş lezzeti</h2>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="newsletter-form style-one position-relative">
+                                    <div id="typewritter" class="w-100 bg-white border-0 round-10 text-para outline-0">
+                                    </div>
+                                    <a href="#" class="btn style-three z-1 round-10">E-Kataloğu İncele</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-120">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 pe-xxl-1">
+                                <div class="footer-widget mb-30">
+                                    <a href="index.html" class="logo d-block mb-40">
+                                        <img src="assets/img/karpedo_logo.png" alt="Logo" class="logo-light">
+                                        <img src="assets/img/logo_dark.png" alt="Logo" class="logo-dark">
+                                    </a>
+                                    <ul class="social-profile style-five list-unstyled mb-0">
+                                        <li><a href="https://www.facebook.com/" target="_blank"
+                                                class="d-flex flex-wrap align-items-center"><span
+                                                    class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
+                                                        class="ri-facebook-fill"></i></span><span
+                                                    class="social-linkname">Facebook</span></a></li>
+                                        <li><a href="https://x.com/?lang=en" target="_blank"
+                                                class="d-flex flex-wrap align-items-center"><span
+                                                    class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
+                                                        class="ri-twitter-x-line"></i></span><span
+                                                    class="social-linkname">Twitter</span></a></li>
+                                        <li><a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                                                class="d-flex flex-wrap align-items-center"><span
+                                                    class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
+                                                        class="ri-instagram-line"></i></span><span
+                                                    class="social-linkname">Instagram</span></a></li>
+                                        <li><a href="https://www.linkedin.com/" target="_blank"
+                                                class="d-flex flex-wrap align-items-center"><span
+                                                    class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
+                                                        class="ri-linkedin-fill"></i></span><span
+                                                    class="social-linkname">Linkedin</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-2 col-lg-2 col-6 ps-xxl-5">
+                                <div class="footer-widget mb-30 ps-xxl-5">
+                                    <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">
+                                        Kolay Bağlantı</h3>
+                                    <ul class="footer-menu list-unstyled mb-0">
+                                        <li><a href="#" class="link style-two">Anasayfa</a></li>
+                                        <li><a href="#" class="link style-two">Hakkımızda</a></li>
+                                        <li><a href="#" class="link style-two">Sertifikalarımız</a></li>
+                                        <li><a href="#" class="link style-two">Blog</a>
+                                        </li>
+                                        <li><a href="#" class="link style-two">İletişim</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-6 ps-xxl-60">
+                                <div class="footer-widget mb-30">
+                                    <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">Ürünler
+                                    </h3>
+                                    <ul class="footer-menu list-unstyled mb-0">
+                                        <li><a href="#" class="link style-two">Baton Dondurma</a></li>
+                                        <li><a href="#" class="link style-two">Maraş Kesme</a>
+                                        </li>
+                                        <li><a href="#" class="link style-two">Kol Dondurma</a></li>
+                                        <li><a href="#" class="link style-two">Reyon Dondurma</a></li>
+                                        <li><a href="#" class="link style-two">Kase Dondurma</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 ps-xxl-5">
+                                <div class="footer-widget mb-30">
+                                    <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">
+                                        İletişim</h3>
+                                    <ul class="contact-info list-unstyled mb-0">
+                                        <li class="position-relative">
+                                            <img src="assets/img/icons/pin-small.svg" alt="Icon">
+                                            <h6 class="font-primary fw-bold fs-18 text-title mb-6">Adres</h6>
+                                            <p class="text-title mb-0">Sümer Mah. İlahiyat Cad. No:11/A
+                                                Dulkadiroğlu-Kahramanmaraş</p>
+                                        </li>
+                                        <li class="position-relative">
+                                            <img src="assets/img/icons/mail-small.svg" alt="Icon">
+                                            <h6 class="font-primary fw-bold fs-18 text-title mb-6">E-posta</h6>
+                                            <a href="#" class="link style-two fw-normal">info@karpedo.com</a>
+                                        </li>
+                                        <li class="position-relative">
+                                            <img src="assets/img/icons/phone-small.svg" alt="Icon">
+                                            <h6 class="font-primary fw-bold fs-18 text-title mb-6">Telefon</h6>
+                                            <a href="tel:+903442360637" class="link style-two fw-normal">+90 (344) 236
+                                                06 37</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom position-relative bg-title z-1">
+                    <div class="container style-one">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="copyright-text text-white text-md-start text-center mb-0"><i
+                                        class="ri-copyright-line"></i>
+                                    <script>document.write(/\d{4}/.exec(Date())[0])</script> <span
+                                        class="text-white fw-medium">Karpedo</span>
+                                    Tüm Hakları Saklıdır
+                                </p>
+                            </div>
+                            <div class="col-md-5 koolay_signature">
+                                <a href="https://www.vemedya.com/" target="_blank">
+                                    <img src="assets/img/vemedya.svg" alt="Vemedya">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+        </div>
+    </div>
+
+    <div id="progress-wrap" class="progress-wrap style-one">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path id="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/megamenu.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/fslightbox.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/scrollTrigger.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/scrollToPlugin.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/customEase.js"></script>
+    <script src="assets/js/scrollcue.min.js"></script>
+    <script src="assets/js/typewriter.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

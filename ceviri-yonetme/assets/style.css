@@ -1,0 +1,27 @@
+body { font-family: sans-serif; margin: 20px; background: #f5f5f5; }
+.wrap { max-width: 1200px; margin: 0 auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+h3 { margin-top: 0; }
+.alert { padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; }
+.alert-info { background: #e7f3ff; border: 1px solid #b3d7ff; }
+.text-danger { color: #dc3545; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #f0f0f0; }
+.text-muted { color: #666; font-size: 14px; }
+.btn { display: inline-block; padding: 10px 16px; background: #007bff; color: #fff; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; }
+.btn:hover { background: #0056b3; }
+.btn-danger { background: #dc3545; }
+.btn-danger:hover { background: #b02a37; }
+.btn-secondary { background: #6c757d; }
+.btn-secondary:hover { background: #545b62; }
+input[type="text"], input[type="number"], textarea { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; }
+textarea { min-height: 84px; resize: vertical; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { border: 1px solid #eee; border-radius: 8px; padding: 12px; background: #fafafa; }
+code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+.filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; padding: 12px 16px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef; }
+.filter-bar span { font-size: 14px; color: #495057; margin-right: 4px; font-weight: 600; }
+.filter-bar a { display: inline-block; padding: 8px 14px; border-radius: 20px; text-decoration: none; font-size: 13px; color: #495057; background: #fff; border: 1px solid #dee2e6; transition: background .15s, border-color .15s; }
+.filter-bar a:hover { background: #e9ecef; border-color: #adb5bd; color: #212529; }
+.filter-bar a.active { background: #007bff; border-color: #007bff; color: #fff; font-weight: 600; }
+

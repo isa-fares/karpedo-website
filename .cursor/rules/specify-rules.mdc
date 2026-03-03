@@ -1,0 +1,34 @@
+﻿---
+description: Project Development Guidelines
+globs: ["**/*"]
+alwaysApply: true
+---
+# webratik-cms Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-03-02
+
+## Active Technologies
+
+- PHP (project standard); documentation is Markdown. + None for the foundation document itself; it describes existing stack (Composer, Doctrine DBAL, etc.). (001-tech-lead-foundation)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+# Add commands for PHP (project standard); documentation is Markdown.
+
+## Code Style
+
+PHP (project standard); documentation is Markdown.: Follow standard conventions
+
+## Recent Changes
+
+- 001-tech-lead-foundation: Added PHP (project standard); documentation is Markdown. + None for the foundation document itself; it describes existing stack (Composer, Doctrine DBAL, etc.).
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

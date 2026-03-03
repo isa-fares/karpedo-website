@@ -1,0 +1,17 @@
+/.idea
+/.vscode
+/composer.lock
+/adminpanel/compiled
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.sql

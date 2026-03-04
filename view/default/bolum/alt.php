@@ -7,10 +7,7 @@
  * @var $page string
  */ ?>
 <?php
-$kurumsal  = $this->dbLangSelect("sayfa", "aktif = 1 and baslik <> '' and kid = 1");
-$mevzuat  = $this->dbLangSelect("sayfa", "aktif = 1 and baslik <> '' and kid = 2");
-$ahilik  = $this->dbLangSelect("sayfa", "aktif = 1 and baslik <> '' and kid = 3");
-$kurumsal_kimlik = $this->dbLangSelectRow('sayfa', ['id' => 2, 'master_id' => 22]);
+$urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira ASC, sira ASC");
 ?>
 
 
@@ -66,12 +63,12 @@ $kurumsal_kimlik = $this->dbLangSelectRow('sayfa', ['id' => 2, 'master_id' => 22
                         <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">
                             Kolay Bağlantı</h3>
                         <ul class="footer-menu list-unstyled mb-0">
-                            <li><a href="#" class="link style-two">Anasayfa</a></li>
-                            <li><a href="#" class="link style-two">Hakkımızda</a></li>
-                            <li><a href="#" class="link style-two">Sertifikalarımız</a></li>
-                            <li><a href="#" class="link style-two">Blog</a>
+                            <li><a href="<?= $this->BaseURL("index") ?>" class="link style-two">Anasayfa</a></li>
+                            <li><a href="<?= $this->BaseURL("hakkimizda") ?>" class="link style-two">Hakkımızda</a></li>
+                            <!-- <li><a href="#" class="link style-two">Sertifikalarımız</a></li> -->
+                            <li><a href="<?= $this->BaseURL("blog") ?>" class="link style-two">Blog</a>
                             </li>
-                            <li><a href="#" class="link style-two">İletişim</a></li>
+                            <li><a href="<?= $this->BaseURL("iletisim") ?>" class="link style-two">İletişim</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,12 +77,9 @@ $kurumsal_kimlik = $this->dbLangSelectRow('sayfa', ['id' => 2, 'master_id' => 22
                         <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">Ürünler
                         </h3>
                         <ul class="footer-menu list-unstyled mb-0">
-                            <li><a href="#" class="link style-two">Baton Dondurma</a></li>
-                            <li><a href="#" class="link style-two">Maraş Kesme</a>
-                            </li>
-                            <li><a href="#" class="link style-two">Kol Dondurma</a></li>
-                            <li><a href="#" class="link style-two">Reyon Dondurma</a></li>
-                            <li><a href="#" class="link style-two">Kase Dondurma</a></li>
+                            <? foreach($urunler as $urun) : ?>
+                            <li><a href="<?= $this->BaseURL("urun_detay") . "/" . $urun["url"] . ".html" ?>" class="link style-two"><?= $urun["baslik"] ?></a></li>
+                            <? endforeach; ?>
                         </ul>
                     </div>
                 </div>

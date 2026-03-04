@@ -6,7 +6,7 @@
  * @var $assetURL string
  * @var $page string
  */
-$kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
+$kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira ASC, id ASC");
 
 ?>
 <!-- Page Header-->

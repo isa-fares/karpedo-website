@@ -32,7 +32,7 @@ class Urun  extends Settings
 
         $this->tablist = array(
             array("title" => "Ürünlerimiz", "href" => "liste", "icon" => "mdi mdi-view-sequential"),
-            // array("title" => "Kategoriler", "href" => "kategoriler", "icon" => "mdi mdi-ungroup"),
+            array("title" => "Kategoriler", "href" => "kategoriler", "icon" => "mdi mdi-ungroup"),
             ///array("title" => "Yardım", "href" => "help", "icon" => "mdi mdi-comment-question-outline"),
             array("title" => $this->modul_info["baslik"] . " Modül Ayarları", "href" => "settings", "icon" => "mdi mdi-settings"),
         );
@@ -447,13 +447,13 @@ class Urun  extends Settings
         $text .= $form->closeDiv();
 
 
-        /* $text .= $form->openColumn(4);
+        $text .= $form->openColumn(4);
 
-            $text.= $form->file(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"1920x900",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
+            $text.= $form->file(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"400x336",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
 
 
 
-        $text.= $form->closeDiv();*/
+        $text.= $form->closeDiv();
 
         $text .= $form->formClose();
 

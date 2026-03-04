@@ -29,15 +29,14 @@ $urls = [
 <div class="error-404-wrapper">
 	<div class="error-404-inner">
 		<div class="error-404-code">404</div>
-		<h1 class="error-404-title"><?= $this->lang->genel('error_404_title') ?></h1>
-		<p class="error-404-text"><?= $this->lang->genel('error_404_message') ?></p>
+		<h1 class="error-404-text">Sayfa bulunamadı</h1>
 
 		<div class="error-404-buttons">
 			<a href="<?= $urls['home'] ?>" class="error-404-btn primary">
-				<?= $this->lang->genel('error_404_home') ?>
+				Anasayfa
 			</a>
 			<a href="javascript:history.back(-1)" class="error-404-btn secondary">
-				<?= $this->lang->genel('error_404_back') ?>
+				Geri
 			</a>
 		</div>
 	</div>
@@ -64,24 +63,18 @@ $urls = [
 		font-size: 120px;
 		font-weight: 700;
 		line-height: 1;
-		color: #be1f2f;
+		color: #30363D;
 		margin-bottom: 20px;
 		font-family: "Plus Jakarta Sans", sans-serif;
 		letter-spacing: -4px;
 	}
 
-	.error-404-title {
-		font-size: 32px;
-		font-weight: 700;
-		color: #111111;
-		margin-bottom: 20px;
-		font-family: "Plus Jakarta Sans", sans-serif;
-	}
+
 
 	.error-404-text {
-		font-size: 18px;
+		font-size: 32px;
 		margin: 0 0 40px;
-		color: #696969;
+		color: #30363D !important;
 		line-height: 1.6;
 		font-family: "Manrope", sans-serif;
 	}
@@ -106,31 +99,31 @@ $urls = [
 	}
 
 	.error-404-btn.primary {
-		background-color: #be1f2f;
-		border-color: #be1f2f;
+		background-color: #30363D;
+		border-color: #30363D;
 		color: #ffffff;
 	}
 
 	.error-404-btn.primary:hover {
-		background-color: #9a1926;
-		border-color: #9a1926;
+		background-color: #30363D;
+		border-color: #30363D;
 		color: #ffffff;
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(190, 31, 47, 0.3);
+		box-shadow: 0 4px 12px rgba(30, 36, 41, 0.3);
 	}
 
 	.error-404-btn.secondary {
 		background-color: #ffffff;
-		border-color: #be1f2f;
-		color: #be1f2f;
+		border-color: #30363D;
+		color: #30363D;
 	}
 
 	.error-404-btn.secondary:hover {
-		background-color: #be1f2f;
-		border-color: #be1f2f;
+		background-color: #30363D;
+		border-color: #30363D;
 		color: #ffffff;
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(190, 31, 47, 0.3);
+		box-shadow: 0 4px 12px rgba(30, 36, 41, 0.3);
 	}
 
 	@media (max-width: 575px) {
@@ -147,9 +140,6 @@ $urls = [
 			letter-spacing: -2px;
 		}
 
-		.error-404-title {
-			font-size: 24px;
-		}
 
 		.error-404-text {
 			font-size: 16px;

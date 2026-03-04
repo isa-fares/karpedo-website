@@ -152,7 +152,7 @@ class Blog  extends Settings{
         foreach ($this->settings->lang('lang') as $dil=>$title):
             $tabForm[$dil]['text']  = $form->input(array("required"=>array("tr"),'value'=>((isset($data[$dil]['baslik']) ? $this->temizle($data[$dil]['baslik']) :'')),'title'=>'Başlık','lang'=>$dil,'name'=>'baslik'));
             //$tabForm[$dil]['text'] .= $form->input(array('yardim'=>"Markaya tıklanınca açılacak sayfanın urlsi", 'icon'=>'fa fa-unlink','value'=>((isset($data[$dil]['link']) ? $this->temizle($data[$dil]['link']) :'')),'title'=>'URL','lang'=>$dil,'name'=>'link', 'help'=>"Örneğin: ".$this->baseURL("iletisim.html")));
-            $tabForm[$dil]['text'] .= $form->textarea(array('value'=>((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) :'')),'title'=>'Özet','name'=>'ozet','lang'=>$dil));
+            // $tabForm[$dil]['text'] .= $form->textarea(array('value'=>((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) :'')),'title'=>'Özet','name'=>'ozet','lang'=>$dil));
             $tabForm[$dil]['text'] .= $form->textEditor(array('value'=>((isset($data[$dil]['detay']) ? $this->temizle($data[$dil]['detay']) :'')),'title'=>'Detay','name'=>'detay','lang'=>$dil,'height' => '183'));
 
         endforeach;
@@ -163,6 +163,7 @@ class Blog  extends Settings{
 
         $text.=$form->openColumn(4);
         $text.= $form->file(array('url'=>$this->BaseURL('upload')."/".$this->modulName,'folder'=>$this->modulName,'title'=>'Haber Resmi','name'=>'resim','resimBoyut'=>$this->modul_image_size($this->modul_info["id"]),'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
+        $text .= $form->file(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Haber Detay Resmi', 'name' => 'ek_resim', 'resimBoyut' => "1014x486", 'src' => ((isset($data['tr']['ek_resim'])) ? $data['tr']['ek_resim'] : '')));
 
         $text.=$form->openBox().$form->openBoxBody();
 
@@ -195,6 +196,7 @@ class Blog  extends Settings{
                     'detay'=>$this->kirlet($this->_POST('detay',$dil)),
                     'tarih'=>date('Y-m-d', strtotime($this->_POST("tarih"))),
                     'resim' => $this->_RESIM_BASE64('resim', $this->modulName),
+                    'ek_resim' => $this->_RESIM_BASE64('ek_resim', $this->modulName),
                     'aktif'=> ($this->_POST('aktif')) ? $this->_POST('aktif'):0,
                     'dil' => $dil
                 );
@@ -205,6 +207,7 @@ class Blog  extends Settings{
                     'tarih'=>date('Y-m-d', strtotime($this->_POST("tarih"))),
                     'ozet'=>$this->kirlet($this->_POST('ozet',$dil)),
                     'detay'=>$this->kirlet($this->_POST('detay',$dil)),
+                    'ek_resim' => $this->_RESIM_BASE64('ek_resim', $this->modulName),
                     'aktif'=> ($this->_POST('aktif')) ? $this->_POST('aktif'):0,
                     'dil' => $dil
                 );

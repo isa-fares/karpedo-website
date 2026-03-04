@@ -10,12 +10,12 @@
 
 // ============================================
 $table = "blog";
-$veri = $this->dbLangSelectRow($table, array("id" => $id, "master_id" => $id), "resim");
+$veri = $this->dbLangSelectRow($table, array("id" => $id, "master_id" => $id), "ek_resim");
 // ============================================
 $baslik = $this->temizle($veri["baslik"]);
 $blog_id = $this->getID($veri);
 $detay = $this->temizle($veri["detay"]);
-$resim = $this->dbResimAl($veri["resim"], "blog", "1200x630");
+$resim = $this->dbResimAl($veri["ek_resim"], "blog", "1014x486");
 
 // ============================================
 // PAGE TITLE

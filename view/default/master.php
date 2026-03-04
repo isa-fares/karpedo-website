@@ -80,7 +80,7 @@ $this->inc_file("css", array(
 
 <div class="preloader-area" id="preloader">
     <video autoplay loop muted>
-        <source src="assets/img/icecream.webm" type="video/mp4">
+        <source src="<?= $assetURL ?>img/icecream.webm" type="video/mp4">
     </video>
     <span>yükleniyor...</span>
 </div>

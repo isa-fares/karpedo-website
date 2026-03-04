@@ -208,7 +208,7 @@ class Urun  extends Settings
 
         $text .= $form->file(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Logo', 'name' => 'resim', 'resimBoyut' => $this->modul_image_size($this->modul_info["id"]), 'src' => ((isset($data['tr']['resim'])) ? $data['tr']['resim'] : '')));
 
-        // $text .= $form->select(array('title' => 'Kategori Seçiniz', 'name' => 'kid', 'data' => $form->parent(array('sql' => "select * from " . $this->ktable . " WHERE sil <> 1 and ", 'option' => array('value' => 'id', 'title' => 'baslik'), 'kat' => 'ustu', 'selected' => ((isset($data['tr']['kid'])) ? $data['tr']['kid'] : $request_kid)), 0, 0)));
+        $text .= $form->select(array('title' => 'Kategori Seçiniz', 'name' => 'kid', 'data' => $form->parent(array('sql' => "select * from " . $this->ktable . " WHERE sil <> 1 and ", 'option' => array('value' => 'id', 'title' => 'baslik'), 'kat' => 'ustu', 'selected' => ((isset($data['tr']['kid'])) ? $data['tr']['kid'] : $request_kid)), 0, 0)));
 
         $text .= $form->openBox() . $form->openBoxBody();
 

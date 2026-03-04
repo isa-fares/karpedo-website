@@ -6,7 +6,7 @@
  * @var $assetURL string
  * @var $page string
  */
-
+$kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
 
 ?>
 <!-- Page Header-->
@@ -54,7 +54,7 @@
         <div class="navbar-area style-two position-relative" id="navbar">
             <div class="container style-one">
                 <div class="navbar-wrapper d-flex justify-content-center align-items-center">
-                    <a href="<?= $this->BaseURL("anasayfa", $lang, 1) ?>" class="mobilelogo">
+                    <a href="<?= $this->BaseURL("index", $lang, 1) ?>" class="mobilelogo">
                         <img src="<?= $assetURL ?>img/karpedo_logo.png" />
                     </a>
                     <div class="menu-area me-4">
@@ -68,15 +68,18 @@
                                         class="ri-close-line"></i></button>
                             </div>
                             <ul class="menu-section p-0 mb-0 ms-0 lh-1 d-flex align-items-center">
-                                <li><a class="active" href="<?= $this->BaseURL("anasayfa", $lang, 1) ?>">Anasayfa</a></li>
+                                <li><a class="active" href="<?= $this->BaseURL("index", $lang, 1) ?>">Anasayfa</a></li>
                                 <li><a href="<?= $this->BaseURL("hakkimizda", $lang, 1) ?>">Hakkımızda</a></li>
                                 <li class="menu-item-has-children">
                                     <a href="javascript:void(0)">Ürünler<i class="ri-add-line"></i></a>
                                     <ul class="menu-subs menu-column-1">
-                                        <li><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1">Kesme Dondurma</a></li>
-                                        <li><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1">Karışık Dondurma</a></li>
-                                        <li><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1">Çikolatalı Dondurma</a></li>
-                                        <li><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1">Bademli Dondurma</a></li>
+                                        <?php foreach ($kategori as $kategori) :
+                                            $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "480x320");
+                                            $kategori_baslik = $kategori["baslik"];
+                                            $kategori_url = $this->BaseURL("urunler") . "/" . $kategori["url"] . ".html";   
+                                        ?>
+                                        <li><a href="<?= $kategori_url ?>"><?= $kategori_baslik ?></a></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </li>
                                 <li class="nvb_li">

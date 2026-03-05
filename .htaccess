@@ -33,6 +33,7 @@ RewriteRule ^ar/(.*)/(.*)-([0-9]+)\.html/([0-9]+)$ index.php?page=$1&katurl=$2&i
 RewriteRule ^ar/(.*).html/([0-9]+)$ index.php?page=$1&lang=ar&sayfa=$2 [L,NC]
 RewriteRule ^ar/user/(.*)\.html$ index.php?page=user&type=$1&lang=ar [L,NC]
 
+RewriteRule ^e-katalog.html/([0-9]+)$ index.php?page=e-katalog&lang=tr&type=katalog&id=$1 [L]
 
 RewriteRule ^(.*)/(.*)/(.*)\.html$ index.php?page=$1&katurl=$2&urunurl=$3&lang=tr [L,NC]
 RewriteRule ^(.*)/(.*)-([0-9]+)\.html$ index.php?page=$1&katurl=$2&id=$3&lang=tr [L,NC]

@@ -449,7 +449,7 @@ class Urun  extends Settings
 
         $text .= $form->openColumn(4);
 
-            $text.= $form->file(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"200x200",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
+            $text.= $form->file2(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"200x200",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
 
 
 

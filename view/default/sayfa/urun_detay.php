@@ -42,7 +42,7 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                 <ul class="br-menu list-unstyled mb-0">
                     <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
                     <li><a href="<?= $this->langURL("urunler") ?>">Ürünler</a></li>
-                    <li><?= htmlspecialchars($urun_baslik) ?></li>
+                    <li><?= ($urun_baslik) ?></li>
                 </ul>
             </div>
             <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -82,7 +82,7 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                     <div class="post-share d-flex flex-wrap align-items-center">
                         <span class="text-para fw-semibold me-3">Paylaş:</span>
                         <ul class="social-profile style-three list-unstyled mb-0">
-                            <?= $this->getSocialList() ?>
+                            <?= $this->getustSocialList() ?>
                         </ul>
                     </div>
                 </div>

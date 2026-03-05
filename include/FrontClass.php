@@ -1819,6 +1819,28 @@ EOT;
         }
 
     }
+    public function  getustSocialList()
+    {
+        $text = "";
+        $list = $this->settings->sosyal()["list"];
+
+        if (is_array($list)) {
+            foreach ($list as $key => $item) {
+                if (!empty($this->ayarlar($key))) {
+                    $text .= '
+                    
+                                    <li><a href="'.$this->ayarlar($key).'" target="_blank"
+                                            class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
+                                                class="'.$this->settings->sosyal()["frontIcons"][$key].'"></i>
+                                                </a>
+                                                </li>
+                        ';
+                }
+            }
+
+            return $text;
+        }
+    }
 
 
 

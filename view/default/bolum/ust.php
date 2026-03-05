@@ -7,6 +7,7 @@
  * @var $page string
  */
 $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira ASC, id ASC");
+$katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1));
 
 ?>
 <!-- Page Header-->
@@ -30,7 +31,7 @@ $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <>
                             class="social-share d-flex flex-wrap align-items-center justify-content-lg-end justify-content-center">
                             <span class="fs-15 text-white">Takip Edin:</span>
                             <ul class="social-profile style-six list-unstyled mb-0">
-                                <?= $this->getSocialList() ?>
+                                <?= $this->getustSocialList() ?>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +78,7 @@ $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <>
                                         <img src="<?= $assetURL ?>img/logo_dark.png" alt="Logo" class="logo-dark">
                                     </a>
                                 </li>
-                                <li><a href="<?= $this->BaseURL("e-katalog", $lang, 1) ?>">E-Katalog</a></li>
+                                <li><a href="<?= $this->baseURL('e-katalog.html') . '/' . $katalog[$mid . 'id'] ?>">E-Katalog</a></li>
                                 <li><a href="<?= $this->BaseURL("blog", $lang, 1) ?>">Blog</a></li>
                                 <li><a href="<?= $this->BaseURL("iletisim", $lang, 1) ?>">İletişim</a></li>
                             </ul>

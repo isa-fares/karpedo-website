@@ -37,6 +37,8 @@ if (!empty($resim)) {
 $current_url = urlencode($this->fullUrl);
 $instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kurumsal";
 // ============================================
+//get all  foto from galeri InstagramGalari
+$foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type = 'galeri'", "resim", "", "ORDER BY sira asc, id asc");
 
 ?>
 
@@ -94,131 +96,19 @@ $instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kur
 
 <div class="insta-slider-three swiper pb-120">
     <div class="swiper-wrapper">
+        <?php foreach ($foto_galeri as $foto):
+        $foto_url = $this->dbResimAl($foto["dosya"], "galeri", "1350x1688");
+        ?>
         <div class="swiper-slide">
             <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/1.jpg" alt="Image" class="round-20">
+                <img src="<?= $foto_url ?>" alt="Image" class="round-20">
                 <span
                     class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
                         class="ri-instagram-line"></i></span>
             </a>
         </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/2.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/3.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/4.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/5.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/6.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/7.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/8.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/9.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/10.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/11.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/12.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/13.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
+        <?php endforeach; ?>
     </div>
+                                                                                                                                                                                                                                                                                                                            </div>
 </div>

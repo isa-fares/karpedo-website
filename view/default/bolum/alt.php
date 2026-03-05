@@ -83,7 +83,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
                             <li class="position-relative">
                                 <img src="<?=$assetURL?>img/icons/phone-small.svg" alt="Icon">
                                 <h6 class="font-primary fw-bold fs-18 text-title mb-6">Telefon</h6>
-                                <a href="tel:<?= $this->ayarlar("telefon_kultu") ?>" class="link style-two fw-normal"><?= $this->ayarlar("telefon_kultu") ?>
+                                <a href="tel:<?= $this->ayarlar("telefon_2merkez") ?>" class="link style-two fw-normal"><?= $this->ayarlar("telefon_2merkez") ?>
                                 </a>
                             </li>
                         </ul>

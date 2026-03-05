@@ -48,8 +48,10 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
             </div>
             <div class="contact-info">
                 <h3 class="fs-22 fw-normal">Fabrika</h3>
-                <p>Sümer Mah. İlahiyat Cad. No:11/A Dulkadiroğlu-Kahramanmaraş / Türkiye</p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block">info@karpedo.com</a>
+                <p>
+                    <?= $this->ayarlar("adres_merkez") ?>
+                </p>
+                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("email_merkez") ?></a>
                 </p>
                 <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_merkez") ?></a>      
                 </p>

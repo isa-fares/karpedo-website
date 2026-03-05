@@ -30,18 +30,7 @@ $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <>
                             class="social-share d-flex flex-wrap align-items-center justify-content-lg-end justify-content-center">
                             <span class="fs-15 text-white">Takip Edin:</span>
                             <ul class="social-profile style-six list-unstyled mb-0">
-                                <li><a href="https://www.facebook.com/" target="_blank"
-                                        class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
-                                            class="ri-facebook-fill"></i></a></li>
-                                <li><a href="https://x.com/?lang=en" target="_blank"
-                                        class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
-                                            class="ri-twitter-x-line"></i></a></li>
-                                <li><a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                                        class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
-                                            class="ri-instagram-line"></i></a></li>
-                                <li><a href="https://www.linkedin.com/" target="_blank"
-                                        class="d-flex flex-column align-items-center justify-content-center rounded-circle"><i
-                                            class="ri-linkedin-fill"></i></a></li>
+                                <?= $this->getSocialList() ?>
                             </ul>
                         </div>
                     </div>
@@ -76,9 +65,9 @@ $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <>
                                         <?php foreach ($kategori as $kategori) :
                                             $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "480x320");
                                             $kategori_baslik = $kategori["baslik"];
-                                            $kategori_url = $this->BaseURL("urunler") . "/" . $kategori["url"] . ".html";   
+                                            $kategori_url = $this->BaseURL("urunler/" . $kategori["url"], $lang, 1);
                                         ?>
-                                        <li><a href="<?= $kategori_url ?>"><?= $kategori_baslik ?></a></li>
+                                            <li><a href="<?= $kategori_url ?>"><?= $kategori_baslik ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>

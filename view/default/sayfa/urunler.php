@@ -1,5 +1,20 @@
-<?
-//  هنا  بدنا بنجيب المنتجات بناء على التصنيف الذي يضغطه المستخدم
+<?php
+/**
+ * Ürünler listesi (kategoriye göre)
+ * @var $this FrontClass|Loader
+ * @var $lang string
+ * @var $assetURL string
+ * @var $id int kategori id
+ */
+
+// ============================================
+// PAGE CONFIGURATION (tek dil - direkt değerler)
+// ============================================
+$sayfa = "urunler";
+$baslik = "Ürünler";
+$this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
+
+// Ürünler: seçilen kategoriye göre
 $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' AND kid = $id", "resim", "", "ORDER BY sira DESC, id DESC");
 ?>
 <div class="breadcrumb-area position-relative z-1">
@@ -17,10 +32,10 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12">Ürünler</h2>
+                <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
                 <ul class="br-menu list-unstyled mb-0">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li>Ürünler</li>
+                    <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
+                    <li><?= $baslik ?></li>
                 </ul>
             </div>
             <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -33,12 +48,12 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
 </div>
 <div class="container style-one pt-120 pb-90">
     <div class="row justify-content-center" style="row-gap: 30px;">
-        <? if ($urunler) : ?>
+        <?php if ($urunler) : ?>
             <?php foreach ($urunler as $urun) :
 
                 $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x336");
                 $urun_baslik = $urun["baslik"];
-                $urun_url = $this->BaseURL("urun_detay") . "/" . $urun["url"] . ".html";
+                $urun_url = $this->getURL($urun, "urun_detay");
             ?>
 
                 <div class="col-xxl-3 col-xl-4 col-md-6">
@@ -57,13 +72,13 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
                     </div>
                 </div>
             <?php endforeach; ?>
-        <? else : ?>
+        <?php else : ?>
             <div class="col-12">
                 <div class="alert text-center text-white" style="background-color:#111828 ">
                     <h4 class="mb-0">Bu sayfanın içeriği güncellenmektedir.</h4>
                     <h4 class="mb-0">Lütfen daha sonra tekrar kontrol ediniz.</h4>
                 </div>
             </div>
-        <? endif; ?>
+        <?php endif; ?>
     </div>
 </div>

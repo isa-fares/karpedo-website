@@ -31,14 +31,14 @@ return [
     ),
 
     "frontIcons"=>array(
-        "fb"=>"fa fa-facebook-f",
-        "tw"=>"fa fa-twitter",
-        "ytb"=>"fa fa-youtube",
-        "ins"=>"fa fa-instagram",
-        "link"=>"fa fa-linkedin",
-        "wp"=>"fa fa-whatsapp",
-        "vm"=>"fa fa-vimeo",
-        "tlg"=>"fa fa-telegram"
+        "fb"=> "ri-facebook-fill",
+        "tw"=>"ri-twitter-x-line",
+        "ytb"=>"ri-youtube-fill",
+        "ins"=>"ri-instagram-fill",
+        "link"=>"ri-linkedin-fill",
+        "wp"=>"ri-whatsapp-fill",
+        "vm"=>"ri-vimeo-fill",
+        "tlg"=>"ri-telegram-fill"
     )
 
 ];

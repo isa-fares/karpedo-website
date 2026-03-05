@@ -9,15 +9,19 @@
  * @var $page string
  */
 
-// 
+// ============================================
+// PAGE CONFIGURATION (tek dil - direkt değerler)
+// ============================================
+$sayfa = "index";
+$baslik = "Anasayfa";
+$this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
 
-
+// ============================================
+$kategoriler = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
 $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
+// Sosyal link (Instagram) - panelden değiştirilebilir
+$instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kurumsal";
 ?>
-
-
-
-
 
 <section class="hero-area style-two bg-f position-relative z-1">
     <img src="<?= $assetURL ?>img/hero/shape-3.png" alt="Shape"
@@ -112,76 +116,32 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
         <div class="category-swiper-wrap position-relative">
             <div class="swiper category-swiper">
                 <div class="swiper-wrapper">
+
+                <?php foreach ($kategoriler as $kategori):
+                    $kategori_title = $kategori["baslik"];
+                    $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "200x200");
+                    $kategori_url = $this->BaseURL("kategori_detay/" . $kategori["url"], $lang, 1);
+                    $urun_sayisi = $this->dbCount("urun", "aktif = 1 AND sil = 0 AND kid = " . $kategori["id"]);
+                ?>
+
+
                     <div class="swiper-slide">
                         <div class="category-card style-one text-center mb-30">
                             <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/gelato.jpg" alt="Baton Dondurma" class="rounded-circle transition">
+                                <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
                                 <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
                             </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary">Baton Dondurma</a></h3>
-                            <span>(10 Ürün)</span>
+                            <h3 class="fs-24 fw-normal"><a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition"><?= $kategori_title ?></a></h3>
+                            <span>
+                                <?php if ($urun_sayisi > 0): ?>
+                                    (<?= $urun_sayisi ?> Ürün)
+                                <?php endif; ?>
+                        </span>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/icecream.jpg" alt="Reyon Dondurma" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Reyon Dondurma</a></h3>
-                            <span>(18 Ürün)</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/yogurt.jpg" alt="Kase Dondurma" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Kase Dondurma</a></h3>
-                            <span>(14 Ürün)</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/rolled-icecream.jpg" alt="Maraş Kesme" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Maraş Kesme</a></h3>
-                            <span>(12 Ürün)</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/banana-iceream.jpg" alt="Kol Dondurma" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Kol Dondurma</a></h3>
-                            <span>(11 Ürün)</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/banana-iceream.jpg" alt="Kol Dondurma" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Kol Dondurma</a></h3>
-                            <span>(11 Ürün)</span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $assetURL ?>img/category/banana-iceream.jpg" alt="Kol Dondurma" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
-                            </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="text-title link-hover-primary transition">Kol Dondurma</a></h3>
-                            <span>(11 Ürün)</span>
-                        </div>
-                    </div>
+                <?php endforeach; ?>
+
+
                 </div>
             </div>
         </div>
@@ -280,7 +240,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             $blog_month = date("M", strtotime($blog["tarih"]));
             $blog_year = date("Y", strtotime($blog["tarih"]));
             $blog_image = $this->dbResimAl($blog["resim"], "blog", "480x320");
-            $blog_url =  $this->BaseURL("blog_detay") . "/" . $blog["url"]    . ".html";
+            $blog_url = $this->BaseURL("blog_detay/" . $blog["url"], $lang, 1);
         ?>
             <div class="col-xl-4 col-md-6">
                 <div class="blog-card style-two img-hover-zoom round-20 mb-30">
@@ -359,7 +319,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
 <div class="insta-slider-three swiper pb-120">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/1.jpg" alt="Image" class="round-20">
                 <span
@@ -368,7 +328,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/2.jpg" alt="Image" class="round-20">
                 <span
@@ -377,7 +337,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/3.jpg" alt="Image" class="round-20">
                 <span
@@ -386,7 +346,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/4.jpg" alt="Image" class="round-20">
                 <span
@@ -395,7 +355,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/5.jpg" alt="Image" class="round-20">
                 <span
@@ -404,7 +364,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/6.jpg" alt="Image" class="round-20">
                 <span
@@ -413,7 +373,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/7.jpg" alt="Image" class="round-20">
                 <span
@@ -422,7 +382,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/8.jpg" alt="Image" class="round-20">
                 <span
@@ -431,7 +391,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/9.jpg" alt="Image" class="round-20">
                 <span
@@ -440,7 +400,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/10.jpg" alt="Image" class="round-20">
                 <span
@@ -449,7 +409,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/11.jpg" alt="Image" class="round-20">
                 <span
@@ -458,7 +418,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/12.jpg" alt="Image" class="round-20">
                 <span
@@ -467,7 +427,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/13.jpg" alt="Image" class="round-20">
                 <span
@@ -476,7 +436,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
                 <span

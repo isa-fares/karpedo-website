@@ -9,6 +9,10 @@
  */
 
 // ============================================
+// PAGE CONFIGURATION (tek dil - başlık yazıdan)
+// ============================================
+$sayfa = "blog_detay";
+
 $table = "blog";
 $veri = $this->dbLangSelectRow($table, array("id" => $id, "master_id" => $id), "ek_resim");
 // ============================================
@@ -31,6 +35,7 @@ if (!empty($resim)) {
 // SHARE DATA FOR SOCIAL MEDIA
 // ============================================
 $current_url = urlencode($this->fullUrl);
+$instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kurumsal";
 // ============================================
 
 ?>
@@ -50,10 +55,11 @@ $current_url = urlencode($this->fullUrl);
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12">Blog Detayları</h2>
+                <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
                 <ul class="br-menu list-unstyled mb-0">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li>Blog</li>
+                    <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
+                    <li><a href="<?= $this->langURL("blog") ?>">Blog</a></li>
+                    <li><?= $this->cumleKisalt($baslik, 40) ?></li>
                 </ul>
             </div>
             <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -89,7 +95,7 @@ $current_url = urlencode($this->fullUrl);
 <div class="insta-slider-three swiper pb-120">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/1.jpg" alt="Image" class="round-20">
                 <span
@@ -98,7 +104,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/2.jpg" alt="Image" class="round-20">
                 <span
@@ -107,7 +113,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/3.jpg" alt="Image" class="round-20">
                 <span
@@ -116,7 +122,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/4.jpg" alt="Image" class="round-20">
                 <span
@@ -125,7 +131,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/5.jpg" alt="Image" class="round-20">
                 <span
@@ -134,7 +140,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/6.jpg" alt="Image" class="round-20">
                 <span
@@ -143,7 +149,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/7.jpg" alt="Image" class="round-20">
                 <span
@@ -152,7 +158,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/8.jpg" alt="Image" class="round-20">
                 <span
@@ -161,7 +167,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/9.jpg" alt="Image" class="round-20">
                 <span
@@ -170,7 +176,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/10.jpg" alt="Image" class="round-20">
                 <span
@@ -179,7 +185,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/11.jpg" alt="Image" class="round-20">
                 <span
@@ -188,7 +194,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/12.jpg" alt="Image" class="round-20">
                 <span
@@ -197,7 +203,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/13.jpg" alt="Image" class="round-20">
                 <span
@@ -206,7 +212,7 @@ $current_url = urlencode($this->fullUrl);
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                 class="insta-card style-two position-relative round-20">
                 <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
                 <span

@@ -1,23 +1,22 @@
- <?php
+<?php   
+/**
+ * Blog List Page - Clean Code Version
+ * 
+ * @var $this FrontClass|Loader object
+ * @var $lang string
+ * @var $assetURL string
+ * @var $page string
+ */
 
-    /**
-     * Blog List Page - Clean Code Version
-     * 
-     * @var $this FrontClass|Loader object
-     * @var $lang string
-     * @var $assetURL string
-     * @var $page string
-     */
+// ============================================
+// PAGE CONFIGURATION (tek dil - direkt değerler)
+// ============================================
+$sayfa = "blog";
+$baslik = "Blog";
+$this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
 
-    // ============================================
-    // PAGE CONFIGURATION
-    // ============================================
-    $sayfa = $this->lang->genel("blog_baslik");
-    $baslik = $this->lang->genel("blog_baslik");
-    $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
-
-    // ============================================
-    // DATA PREPARATION
+// ============================================
+// DATA PREPARATION
     // ============================================
 
     // Get all blog posts (without limit for pagination)
@@ -54,6 +53,7 @@
         'index' => $this->BaseURL($this->lang->link('index'), $lang, 1),
         'blog' => $this->BaseURL($this->lang->link('blog'), $lang, 1),
     ];
+    $instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kurumsal";
     ?>
 
 
@@ -73,10 +73,10 @@
                          </div>
                      </div>
                      <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                         <h2 class="br-title fw-normal mb-12">Blog</h2>
+                         <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
                          <ul class="br-menu list-unstyled mb-0">
-                             <li><a href="index.html">Anasayfa</a></li>
-                             <li>Blog</li>
+                             <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
+                             <li><?= $baslik ?></li>
                          </ul>
                      </div>
                      <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -98,7 +98,7 @@
                     $blog_date = date("d", strtotime($blog["tarih"]));
                     $blog_month = date("M", strtotime($blog["tarih"]));
                     $blog_year = date("Y", strtotime($blog["tarih"]));
-                    $blog_url =  $this->BaseURL("blog_detay") . "/" . $blog["url"]    . ".html";
+                    $blog_url = $this->getURL($blog, "blog_detay");
                     ?>
                  <div class="col-xl-4 col-md-6">
                      <div class="blog-card style-two img-hover-zoom round-20 mb-30">
@@ -144,7 +144,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/2.jpg" alt="Image" class="round-20">
                          <span
@@ -153,7 +153,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/3.jpg" alt="Image" class="round-20">
                          <span
@@ -162,7 +162,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/4.jpg" alt="Image" class="round-20">
                          <span
@@ -171,7 +171,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/5.jpg" alt="Image" class="round-20">
                          <span
@@ -180,7 +180,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/6.jpg" alt="Image" class="round-20">
                          <span
@@ -189,7 +189,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/7.jpg" alt="Image" class="round-20">
                          <span
@@ -198,7 +198,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/8.jpg" alt="Image" class="round-20">
                          <span
@@ -207,7 +207,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/9.jpg" alt="Image" class="round-20">
                          <span
@@ -216,7 +216,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/10.jpg" alt="Image" class="round-20">
                          <span
@@ -225,7 +225,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/11.jpg" alt="Image" class="round-20">
                          <span
@@ -234,7 +234,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/12.jpg" alt="Image" class="round-20">
                          <span
@@ -243,7 +243,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/13.jpg" alt="Image" class="round-20">
                          <span
@@ -252,7 +252,7 @@
                      </a>
                  </div>
                  <div class="swiper-slide">
-                     <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
+                     <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
                          class="insta-card style-two position-relative round-20">
                          <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
                          <span

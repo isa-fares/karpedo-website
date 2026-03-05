@@ -107,6 +107,18 @@ class FrontClass extends Mail
 
 
     /**
+     * @param $table
+     * @param string $kosul
+     * @return int
+     */
+    public function dbCount($table, $kosul = ""){
+        $query = "SELECT COUNT(*) as count FROM $table WHERE $kosul";
+        $sorgu = $this->tekSorgu($query);
+        return $sorgu['count'];
+    }
+
+
+    /**
      * @return null
      */
     public function sayfaBaslik()
@@ -1786,10 +1798,18 @@ EOT;
         if (is_array($list)){
             foreach ($list as $key=>$item){
                 if (!empty($this->ayarlar($key))){
-                    $text .= '<li>
-                                <a class="tooltip-bottom" href="' . $this->ayarlar($key) . '" target="_blank" data-tooltip="'.$this->settings->sosyal()["list"][$key].'">
-                                    <i class="'.$this->settings->sosyal()["frontIcons"][$key].'"></i>
+                    $text .= '
+                            <li>
+                                <a href="'.$this->ayarlar($key).'" target="_blank" rel="noopener"
+                                    class="d-flex flex-wrap align-items-center">
+                                        <span class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition">
+                                        <i class="'.$this->settings->sosyal()["frontIcons"][$key].'"></i>
+                                        </span>
+                                      <span class="social-linkname">'.$this->settings->sosyal()["list"][$key].'</span>
+                                      </span>
                                 </a>
+
+
                             </li>
                         ';
                 }

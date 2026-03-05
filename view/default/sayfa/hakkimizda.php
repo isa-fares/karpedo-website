@@ -1,3 +1,11 @@
+<?php
+// ============================================
+// PAGE CONFIGURATION (tek dil - direkt değerler)
+// ============================================
+$sayfa = "hakkimizda";
+$baslik = "Hakkımızda";
+$this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
+?>
     <div class="breadcrumb-area position-relative z-1">
         <img src="<?=$assetURL?>img/breadcrumb/br-dot-shape.png" alt="Shape"
             class="br-bg-shape position-absolute top-0 start-0 w-100 h-100 z-n1">
@@ -13,10 +21,10 @@
                     </div>
                 </div>
                 <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                    <h2 class="br-title fw-normal mb-12">Hakkımızda</h2>
-                    <ul class="br-menu list-unstyled mb-0">
-                        <li><a href="index.html">Anasayfa</a></li>
-                        <li>Hakkımızda</li>
+<h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
+                <ul class="br-menu list-unstyled mb-0">
+                    <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
+                        <li><?= $baslik ?></li>
                     </ul>
                 </div>
                 <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -128,8 +136,9 @@
                         hale getirilmesi gerekiyor.</p>
                 </div>
             </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="col-xl-4 col-md-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="mission-card style-one br-hover-one position-relative z-1 round-20 mb-30">
+                    <div class="br-hover position-absolute"></div>
                     <div class="mission-title d-flex flex-wrap align-items-center">
                         <div
                             class="mission-icon d-flex flex-column align-items-center justify-content-center round-10 transition">

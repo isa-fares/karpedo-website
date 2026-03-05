@@ -10,10 +10,10 @@
  */
 header("HTTP/1.0 404 Not Found");
 // ============================================
-// PAGE CONFIGURATION
+// PAGE CONFIGURATION (tek dil - direkt değerler)
 // ============================================
-$sayfa = "Hata";
-$baslik = $this->lang->genel('error_404_title');
+$sayfa = "hata";
+$baslik = "Sayfa Bulunamadı";
 $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
 $this->ogBaslik = $this->sayfaBaslik;
 $this->ogUrl = $this->fullUrl;

@@ -35,26 +35,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
                             <img src="<?=$assetURL?>img/logo_dark.png" alt="Logo" class="logo-dark">
                         </a>
                         <ul class="social-profile style-five list-unstyled mb-0">
-                            <li><a href="https://www.facebook.com/" target="_blank"
-                                    class="d-flex flex-wrap align-items-center"><span
-                                        class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
-                                            class="ri-facebook-fill"></i></span><span
-                                        class="social-linkname">Facebook</span></a></li>
-                            <li><a href="https://x.com/?lang=en" target="_blank"
-                                    class="d-flex flex-wrap align-items-center"><span
-                                        class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
-                                            class="ri-twitter-x-line"></i></span><span
-                                        class="social-linkname">Twitter</span></a></li>
-                            <li><a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                                    class="d-flex flex-wrap align-items-center"><span
-                                        class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
-                                            class="ri-instagram-line"></i></span><span
-                                        class="social-linkname">Instagram</span></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"
-                                    class="d-flex flex-wrap align-items-center"><span
-                                        class="social-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
-                                            class="ri-linkedin-fill"></i></span><span
-                                        class="social-linkname">Linkedin</span></a></li>
+                            <?= $this->getSocialList() ?>
                         </ul>
                     </div>
                 </div>
@@ -63,12 +44,12 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
                         <h3 class="footer-widget-title fs-24 fw-normal text-title position-relative">
                             Kolay Bağlantı</h3>
                         <ul class="footer-menu list-unstyled mb-0">
-                            <li><a href="<?= $this->BaseURL("index") ?>" class="link style-two">Anasayfa</a></li>
-                            <li><a href="<?= $this->BaseURL("hakkimizda") ?>" class="link style-two">Hakkımızda</a></li>
+                            <li><a href="<?= $this->BaseURL("index" , $lang, 1) ?>" class="link style-two">Anasayfa</a></li>
+                            <li><a href="<?= $this->BaseURL("hakkimizda" , $lang, 1) ?>" class="link style-two">Hakkımızda</a></li>
                             <!-- <li><a href="#" class="link style-two">Sertifikalarımız</a></li> -->
-                            <li><a href="<?= $this->BaseURL("blog") ?>" class="link style-two">Blog</a>
+                            <li><a href="<?= $this->BaseURL("blog" , $lang, 1) ?>" class="link style-two">Blog</a>
                             </li>
-                            <li><a href="<?= $this->BaseURL("iletisim") ?>" class="link style-two">İletişim</a></li>
+                            <li><a href="<?= $this->BaseURL("iletisim" , $lang, 1) ?>" class="link style-two">İletişim</a></li>
                         </ul>
                     </div>
                 </div>
@@ -97,13 +78,13 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
                             <li class="position-relative">
                                 <img src="<?=$assetURL?>img/icons/mail-small.svg" alt="Icon">
                                 <h6 class="font-primary fw-bold fs-18 text-title mb-6">E-posta</h6>
-                                <a href="#" class="link style-two fw-normal">info@karpedo.com</a>
+                                <a href="#" class="link style-two fw-normal"><?= $this->ayarlar("email_merkez") ?></a>
                             </li>
                             <li class="position-relative">
                                 <img src="<?=$assetURL?>img/icons/phone-small.svg" alt="Icon">
                                 <h6 class="font-primary fw-bold fs-18 text-title mb-6">Telefon</h6>
-                                <a href="tel:+903442360637" class="link style-two fw-normal">+90 (344) 236
-                                    06 37</a>
+                                <a href="tel:<?= $this->ayarlar("telefon_kultu") ?>" class="link style-two fw-normal"><?= $this->ayarlar("telefon_kultu") ?>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -116,12 +97,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
             <div class="row">
                 <div class="col-md-7">
                     <p class="copyright-text text-white text-md-start text-center mb-0"><i
-                            class="ri-copyright-line"></i>
-                        <script>
-                            document.write(/\d{4}/.exec(Date())[0])
-                        </script> <span
-                            class="text-white fw-medium">Karpedo</span>
-                        Tüm Hakları Saklıdır
+                            class="ri-copyright-line"></i> <?= $this->getFooterCopy() ?>
                     </p>
                 </div>
                 <div class="col-md-5 koolay_signature">

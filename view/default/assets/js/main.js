@@ -202,6 +202,36 @@
         }
     });
 
+    // Category Slider - 5 öğe varsayılan (masaüstü), butonsuz
+    var category_slider = new Swiper(".category-swiper", {
+        loop: true,
+        speed: 600,
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        spaceBetween: 24,
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 3
+            },
+            992: {
+                slidesPerView: 4
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 24
+            }
+        }
+    });
+
     //Service Slider
     var service_sliderOne = new Swiper(".service-slider-one", {
         loop: true,

@@ -185,10 +185,10 @@ class Urun  extends Settings
             //$tabForm[$dil]['text']  .= $form->input(array('value'=>((isset($data[$dil]['kisi']) ? $this->temizle($data[$dil]['kisi']) :'')),'title'=>'Kaç Kişilik','lang'=>$dil,'name'=>'kisi'));
             $tabForm[$dil]['text'] .= $form->textarea(array('value' => ((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) : '')), 'title' => 'Özet Açıklama', 'name' => 'ozet', 'lang' => $dil));
 
-            $tabForm[$dil]['text'] .= $form->textEditor(array('value' => ((isset($data[$dil]['icindekiler']) ? $this->temizle($data[$dil]['icindekiler']) : '')), 'title' => 'İçindekiler', 'name' => 'icindekiler', 'lang' => $dil, 'height' => '250'));
+            // $tabForm[$dil]['text'] .= $form->textEditor(array('value' => ((isset($data[$dil]['icindekiler']) ? $this->temizle($data[$dil]['icindekiler']) : '')), 'title' => 'İçindekiler', 'name' => 'icindekiler', 'lang' => $dil, 'height' => '250'));
 
 
-            $tabForm[$dil]['text'] .= $form->textEditor(array('value' => ((isset($data[$dil]['detay']) ? $this->temizle($data[$dil]['detay']) : '')), 'title' => 'Besin Değerleri', 'name' => 'detay', 'lang' => $dil, 'height' => '250'));
+            $tabForm[$dil]['text'] .= $form->textEditor(array('value' => ((isset($data[$dil]['detay']) ? $this->temizle($data[$dil]['detay']) : '')), 'title' => 'Ürün Detayı', 'name' => 'detay', 'lang' => $dil, 'height' => '250'));
 
         //$tabForm[$dil]['text'] .= $form->textEditor(array('value'=>((isset($data[$dil]['video']) ? $this->temizle($data[$dil]['video']) :'')),'title'=>'Tanıtım Videosu','name'=>'video','lang'=>$dil,'height' => '250'));
 
@@ -428,7 +428,7 @@ class Urun  extends Settings
 
         foreach ($this->settings->lang('lang') as $dil => $title):
             $tabForm[$dil]['text']  = $form->input(array("required" => array("tr"), 'value' => ((isset($data[$dil]['baslik']) ? $this->temizle($data[$dil]['baslik']) : '')), 'title' => 'Kategori Adı', 'lang' => $dil, 'name' => 'baslik'));
-        //$tabForm[$dil]['text'] .= $form->textarea(array('value'=>((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) :'')),'title'=>'Açıklama','name'=>'ozet','lang'=>$dil));
+        $tabForm[$dil]['text'] .= $form->textarea(array('value'=>((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) :'')),'title'=>'Açıklama','name'=>'ozet','lang'=>$dil));
         //$tabForm[$dil]['text']  .= $form->input(array('value'=>((isset($data[$dil]['link']) ? $this->temizle($data[$dil]['link']) :'')),'title'=>'Dışarı Link','lang'=>$dil,'name'=>'link'));
 
         endforeach;
@@ -472,7 +472,7 @@ class Urun  extends Settings
             if ($dil == "tr"):
                 $post[$dil] = array(
                     'baslik' => $this->kirlet($this->_POST('baslik', $dil)),
-                    //'ozet'=> $this->kirlet($this->_POST('ozet',$dil)),
+                    'ozet'=> $this->kirlet($this->_POST('ozet',$dil)),
                     //'link'=> $this->kirlet($this->_POST('link',$dil)),
                     'aktif' => ($this->_POST('aktif')) ? $this->_POST('aktif') : 0,
                     //'ustu'=>($this->_POST('ustu')) ? $this->_POST('ustu'):0,
@@ -484,7 +484,7 @@ class Urun  extends Settings
                 $post[$dil] = array(
                     'baslik' => $this->kirlet($this->_POST('baslik', $dil)),
                     //'link'=> $this->kirlet($this->_POST('link',$dil)),
-                    //'ozet'=> $this->kirlet($this->_POST('ozet',$dil)),
+                    'ozet'=> $this->kirlet($this->_POST('ozet',$dil)),
                     'aktif' => ($this->_POST('aktif')) ? $this->_POST('aktif') : 0,
                     //'ustu'=>($this->_POST('ustu')) ? $this->_POST('ustu'):0,
                     'dil' => $dil

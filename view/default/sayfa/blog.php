@@ -9,7 +9,7 @@
  */
 
 // ============================================
-// PAGE CONFIGURATION (tek dil - direkt değerler)
+//  
 // ============================================
 $sayfa = "blog";
 $baslik = "Blog";

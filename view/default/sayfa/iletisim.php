@@ -5,39 +5,18 @@
 $sayfa = "iletisim";
 $baslik = "İletişim";
 $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
+
+// Breadcrumb: Anasayfa -> İletişim
+$br_param = [
+    ["title" => $this->lang->header("index") ?: "Anasayfa", "href" => $this->langURL("index")],
+    ["title" => $baslik],
+];
+$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
 ?>
-<div class="breadcrumb-area position-relative z-1">
-    <img src="<?= $assetURL ?>img/breadcrumb/br-dot-shape.png" alt="Shape"
-        class="br-bg-shape position-absolute top-0 start-0 w-100 h-100 z-n1">
-    <img src="<?= $assetURL ?>img/top-zigzag-shape.svg" alt="Shape"
-        class="br-top-shape position-absolute top-0 start-0 w-100 z-n1">
-    <img src="<?= $assetURL ?>img/bottom-zigzag-shape.svg" alt="Shape"
-        class="br-bottom-shape position-absolute bottom-0 start-0 w-100 z-n1">
-    <div class="container style-one text-center">
-        <div class="row align-items-center">
-            <div class="col-xxl-4 col-lg-3 col-md-2">
-                <div class="br-img mb-sm-10">
-                    <img src="<?= $assetURL ?>img/breadcrumb/br-img-2.png" alt="Image" class="d-block mx-auto">
-                </div>
-            </div>
-            <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
-                <ul class="br-menu list-unstyled mb-0">
-                    <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
-                    <li><?= $baslik ?></li>
-                </ul>
-            </div>
-            <div class="col-xxl-4 col-lg-3 col-md-2">
-                <div class="br-img">
-                    <img src="<?= $assetURL ?>img/breadcrumb/br-img-8.png" alt="Image" class="d-block mx-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-
+<!-- ================================================ -->
+<!-- İletişim İçerik -->
+<!-- ================================================ -->
 <div class="container style-one ptb-120">
     <div
         class="contact-card-wrap style-one d-flex flex-wrap align-items-center justify-content-center round-20">
@@ -53,7 +32,7 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
                 </p>
                 <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("email_merkez") ?></a>
                 </p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_merkez") ?></a>      
+                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_merkez") ?></a>
                 </p>
             </div>
         </div>
@@ -130,7 +109,7 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
                     </div>
                     <div class="col-12">
                         <div class="col-xl-5 col-md-6">
-                            <button type="submit" 
+                            <button type="submit"
                                 class="btn style-two position-relative z-1 round-10">Gönder</button>
                         </div>
                     </div>
@@ -152,133 +131,4 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
     <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
     </h2>
 </div>
-<div class="insta-slider-three swiper pb-120">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/1.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/2.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/3.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/4.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/5.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/6.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/7.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/8.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/9.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/10.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/11.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/12.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/13.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="https://www.instagram.com/karpedo.kurumsal" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-    </div>
-</div>
+<?php $this->instaSlider(); ?>

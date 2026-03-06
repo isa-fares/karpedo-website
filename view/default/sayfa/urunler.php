@@ -22,42 +22,30 @@ if (empty($id) || (int)$id === 0) {
     $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' AND kid = " . (int)$id, "resim", "", "ORDER BY sira DESC, id DESC");
     $kategori = $this->dbLangSelectRow("kategori", array("id" => $id), "baslik", "", "ORDER BY sira DESC, id DESC");
     $kategoriBaslik = isset($kategori["baslik"]) ? $kategori["baslik"] : $baslik;
-    $breadcrumb_baslik = $kategoriBaslik;
 }
-?>
-<div class="breadcrumb-area position-relative z-1">
-    <img src="<?= $assetURL ?>img/breadcrumb/br-dot-shape.png" alt="Shape"
-        class="br-bg-shape position-absolute top-0 start-0 w-100 h-100 z-n1">
-    <img src="<?= $assetURL ?>img/top-zigzag-shape.svg" alt="Shape"
-        class="br-top-shape position-absolute top-0 start-0 w-100 z-n1">
-    <img src="<?= $assetURL ?>img/bottom-zigzag-shape.svg" alt="Shape"
-        class="br-bottom-shape position-absolute bottom-0 start-0 w-100 z-n1">
-    <div class="container style-one text-center">
-        <div class="row align-items-center">
-            <div class="col-xxl-4 col-lg-3 col-md-2">
-                <div class="br-img mb-sm-10">
-                    <img src="<?= $assetURL ?>img/breadcrumb/br-img-2.png" alt="Image" class="d-block mx-auto">
-                </div>
-            </div>
-            <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12"><?= $breadcrumb_baslik ?></h2>
-                <ul class="br-menu list-unstyled mb-0">
-                    <li><a href="<?= $this->BaseURL("index", $lang, 1) ?>">Anasayfa</a></li>
-                    <li><a href="<?= $this->BaseURL("urunler", $lang, 1) ?>"><?= $baslik ?></a></li>
-                    <?php if (!empty($id) && (int)$id > 0): ?>
-                        <li><?= $breadcrumb_baslik ?></li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-            <div class="col-xxl-4 col-lg-3 col-md-2">
-                <div class="br-img">
-                    <img src="<?= $assetURL ?>img/breadcrumb/br-img-8.png" alt="Image" class="d-block mx-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+
+// ============================================
+// Breadcrumb
+// ============================================
+
+$br_param = [
+    ["title" => $this->lang->header("index") ?: "Anasayfa", "href" => $this->langURL("index")],
+];
+if (!empty($id) && (int)$id > 0) {
+    $br_param[] = ["title" => $baslik, "href" => $this->langURL("urunler")];
+    $br_param[] = ["title" => $kategoriBaslik];
+} else {
+    $br_param[] = ["title" => $baslik];
+}
+$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png');
+?>
+
+
+
+<!-- ================================================ -->
+<!-- Ürünler / Kategori İçerik -->
+<!-- ================================================ -->
 <div class="container style-one pt-120 pb-90">
     <!-- ========== Görünüm: Kategoriler listesi -->
     <?php if (empty($id) || (int)$id === 0): ?>
@@ -68,7 +56,7 @@ if (empty($id) || (int)$id === 0) {
                 <?php foreach ($kategoriler as $kat):
                     $kategori_title = $kat["baslik"];
                     $kategori_image = $this->dbResimAl($kat["resim"], "kategori", "400x336");
-                    $kategori_url = $this->BaseURL("urunler/" . $kat["url"] . "-" . $kat["id"], $lang, 1);
+                    $kategori_url = $this->getURL($kat, "urunler", $lang, 1);
                 ?>
                     <div class="col-xxl-3 col-xl-4 col-md-6">
                         <div class="product-card br-hover-one style-one text-center position-relative z-1 round-20 mb-30 transition">

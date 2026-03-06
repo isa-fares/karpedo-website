@@ -200,7 +200,7 @@
   }
 
   .breadcrumb-area .br-img img {
-    max-width: 80px;
+    /* max-width: 80px; */
   }
 
   .hero-area.style-one {
@@ -1562,7 +1562,7 @@
   }
 
   .breadcrumb-area {
-    padding: 85px 0 86px;
+    padding: 35px 0;
   }
 
   .breadcrumb-area .br-title {

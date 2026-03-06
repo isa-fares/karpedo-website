@@ -556,10 +556,15 @@ class FrontClass extends Mail
         echo $this->_include('bolum/files',["param"=>$param],$this->theme);
     }
 
-    public function breadcrumb($param = array()){
-        echo $this->_include('bolum/breadcrumb',["param"=>$param, "lang"=>$this->pageLang],$this->theme);
+    /** @param array $param breadcrumb maddeleri. @param string|null $br_image isteğe bağlı sağdaki görsel URL (yoksa varsayılan kullanılır) */
+    public function breadcrumb($param = array(), $br_image = null){
+        echo $this->_include('bolum/breadcrumb', ["param" => $param, "lang" => $this->pageLang, "br_image" => $br_image], $this->theme);
     }
 
+    /** Instagram galeri slider; $foto_galeri verilmezse bileşen içinde çekilir (rule 12) */
+    public function instaSlider($foto_galeri = null){
+        echo $this->_include('bolum/instaslider', ["foto_galeri" => $foto_galeri], $this->theme);
+    }
 
     /**
      * @param array $param

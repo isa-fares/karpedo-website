@@ -118,7 +118,7 @@ class Urun  extends Settings
         $text = $pagelist->Tablist($this->tablist);
 
         $text .= $pagelist->PageList(array(
-            //'flitpage' => array("url"=>$filterURL,"title"=>"Kategori Seçiniz",'sql'=>"select * from $this->ktable WHERE sil <> 1 and  ",'option'=>array('value'=>'id','title'=>'baslik'), "name"=>"katFilter", "class"=>"kat_filter", "kat"=>"ustu"),
+            'flitpage' => array("url"=>$filterURL,"title"=>"Kategori Seçiniz",'sql'=>"select * from $this->ktable WHERE sil <> 1 and  ",'option'=>array('value'=>'id','title'=>'baslik'), "name"=>"katFilter", "class"=>"kat_filter", "kat"=>"ustu"),
             //'markaFilter' => array("url"=>$filterURL,"title"=>"Marka Seçiniz",'sql'=>"select * from marka WHERE sil <> 1  ",'option'=>array('value'=>'id','title'=>'baslik'), "name"=>"markaFilter", "class"=>"marka_filter"),
             'id' => $id,
             'marka' => $marka,
@@ -207,6 +207,7 @@ class Urun  extends Settings
 
 
         $text .= $form->file2(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Logo', 'name' => 'resim', 'resimBoyut' => $this->modul_image_size($this->modul_info["id"]), 'src' => ((isset($data['tr']['resim'])) ? $data['tr']['resim'] : '')));
+        $text .= $form->file2(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Ek Resim', 'name' => 'ek_resim', 'resimBoyut' => $this->modul_image_size($this->modul_info["id"]), 'src' => ((isset($data['tr']['ek_resim'])) ? $data['tr']['ek_resim'] : '')));
 
         $text .= $form->select(array('title' => 'Kategori Seçiniz', 'name' => 'kid', 'data' => $form->parent(array('sql' => "select * from " . $this->ktable . " WHERE sil <> 1 and ", 'option' => array('value' => 'id', 'title' => 'baslik'), 'kat' => 'ustu', 'selected' => ((isset($data['tr']['kid'])) ? $data['tr']['kid'] : $request_kid)), 0, 0)));
 
@@ -248,6 +249,7 @@ class Urun  extends Settings
                     'video' => $this->kirlet($this->_POST('video', $dil)),
                     'koordinat' => $this->kirlet($this->_POST('koordinat')),
                     'resim' => $this->_RESIM_BASE64('resim', $this->modulName, "", "jpg", ""),
+                    'ek_resim' => $this->_RESIM_BASE64('ek_resim', $this->modulName, "", "jpg", ""),
                     //'detay_resim' => $this->_RESIM_BASE64('detay_resim', $this->modulName),
                     //'logo' => $this->_RESIM_BASE64('logo', $this->modulName),
                     'aktif' => ($this->_POST('aktif')) ? $this->_POST('aktif') : 0,
@@ -383,6 +385,7 @@ class Urun  extends Settings
             "place" => "kategorilerde ara",
             "showing" => $showing,
             "resim" => false,
+            "ek_resim" => false,
             "toplamVeri" => $toplamVeri,
             "search" => true,
             'button' => array(array('title' => 'Kategori Ekle', 'href' => $this->BaseAdminURL($this->modulName . '/kategoriEkle'), "class" => "btn btn-success")),
@@ -477,6 +480,7 @@ class Urun  extends Settings
                     'aktif' => ($this->_POST('aktif')) ? $this->_POST('aktif') : 0,
                     //'ustu'=>($this->_POST('ustu')) ? $this->_POST('ustu'):0,
                     'resim' => $this->_RESIM_BASE64('banner_resim', $this->ktable),
+                    'ek_resim' => $this->_RESIM_BASE64('ek_resim', $this->ktable),
                     'banner' => $this->_RESIM_BASE64('banner', $this->ktable),
                     'dil' => $dil
                 );
@@ -487,6 +491,7 @@ class Urun  extends Settings
                     'ozet'=> $this->kirlet($this->_POST('ozet',$dil)),
                     'aktif' => ($this->_POST('aktif')) ? $this->_POST('aktif') : 0,
                     //'ustu'=>($this->_POST('ustu')) ? $this->_POST('ustu'):0,
+                    'ek_resim' => $this->_RESIM_BASE64('ek_resim', $this->ktable),
                     'dil' => $dil
                 );
             endif;

@@ -10,3 +10,20 @@ alwaysApply: true
 4-All code comments must be in Turkish and concise
 
 5-All commit messages must be in Turkish and concise
+
+6-Always separate between sections with a block comment in this format:
+   <!-- ================================================ -->
+   <!-- Section Title / Description -->
+   <!-- ================================================ -->
+
+7-For dynamic links (URLs), always use $this->getURL — do not hardcode or build URLs manually.
+
+8-Use BaseURL only in the places intended for it (e.g. assets, static paths, base path contexts) — do not use it for page/route links; use $this->getURL for those.
+
+9-To get images from the database, use $this->dbResimAl() with: (image field/data, type e.g. "urun", dimensions e.g. "400x0"). Example: $ek_resim = $this->dbResimAl($urun["ek_resim"], "urun", "400x0");
+
+10-For every page view, always set SEO variables at the top: $sayfa (page slug), $baslik (page title), and $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang). Use $this->ogBaslik when the page has Open Graph meta. Example (from blog.php): $sayfa = "blog"; $baslik = "Blog"; $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
+
+11-To fetch blog posts (and similar lang-aware lists), use $this->dbLangSelect(table, where, imageField, extra, orderBy). Example: $all_blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
+
+12-To fetch the photo gallery, use $this->dbLangSelect on table "dosyalar" with type = 'galeri'. Example: $foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type = 'galeri'", "resim", "", "ORDER BY sira asc, id asc");

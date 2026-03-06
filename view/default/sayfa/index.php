@@ -19,12 +19,6 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
 // ============================================
 $kategoriler = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira asc, id asc");
 $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira asc, id asc");
-// Sosyal link (Instagram) - panelden değiştirilebilir
-$instagram_url = $this->ayarlar("ins") ?: "https://www.instagram.com/karpedo.kurumsal";
- 
-//get all  foto from galeri InstagramGalari
-$foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type = 'galeri'", "resim", "", "ORDER BY sira asc, id asc");
-
 ?>
 
 <section class="hero-area style-two bg-f position-relative z-1">
@@ -121,29 +115,29 @@ $foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type =
             <div class="swiper category-swiper">
                 <div class="swiper-wrapper">
 
-                <?php foreach ($kategoriler as $kategori):
-                    $kategori_title = $kategori["baslik"];
-                    $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "200x200");
-                    $kategori_url = $this->BaseURL("kategori_detay/" . $kategori["url"], $lang, 1);
-                    $urun_sayisi = $this->dbCount("urun", "aktif = 1 AND sil = 0 AND kid = " . $kategori["id"]);
-                ?>
+                    <?php foreach ($kategoriler as $kategori):
+                        $kategori_title = $kategori["baslik"];
+                        $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "200x200");
+                        $kategori_url = $this->BaseURL("kategori_detay/" . $kategori["url"], $lang, 1);
+                        $urun_sayisi = $this->dbCount("urun", "aktif = 1 AND sil = 0 AND kid = " . $kategori["id"]);
+                    ?>
 
 
-                    <div class="swiper-slide">
-                        <div class="category-card style-one text-center mb-30">
-                            <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
-                                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                        <div class="swiper-slide">
+                            <div class="category-card style-one text-center mb-30">
+                                <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                    <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
+                                    <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                                </div>
+                                <h3 class="fs-24 fw-normal"><a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition"><?= $kategori_title ?></a></h3>
+                                <span>
+                                    <?php if ($urun_sayisi > 0): ?>
+                                        (<?= $urun_sayisi ?> Ürün)
+                                    <?php endif; ?>
+                                </span>
                             </div>
-                            <h3 class="fs-24 fw-normal"><a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition"><?= $kategori_title ?></a></h3>
-                            <span>
-                                <?php if ($urun_sayisi > 0): ?>
-                                    (<?= $urun_sayisi ?> Ürün)
-                                <?php endif; ?>
-                        </span>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
 
 
                 </div>
@@ -325,26 +319,4 @@ $foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type =
     <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
     </h2>
 </div>
-<div class="insta-slider-three swiper pb-120">
-    <div class="swiper-wrapper">
-    <?php foreach ($foto_galeri as $foto):
-    $foto_url = $this->dbResimAl($foto["dosya"], "galeri", "1350x1688");
-    ?>
-        <div class="swiper-slide">
-            <a href="<?= $foto_url ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $foto_url ?>" alt="Image" class="round-20">
-            </a>
-        </div>
-    <?php endforeach; ?>
-        <div class="swiper-slide">
-            <a href="<?= htmlspecialchars($instagram_url) ?>" target="_blank"
-                class="insta-card style-two position-relative round-20">
-                <img src="<?= $assetURL ?>img/instagram/14.jpg" alt="Image" class="round-20">
-                <span
-                    class="bg_primary d-flex flex-column align-items-center justify-content-center rounded-circle position-absolute transition"><i
-                        class="ri-instagram-line"></i></span>
-            </a>
-        </div>
-    </div>
-</div>
+<?php $this->instaSlider(); ?>

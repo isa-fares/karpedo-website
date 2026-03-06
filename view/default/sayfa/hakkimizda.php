@@ -75,8 +75,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
     </div>
 </section>
 
-
-
+<!-- ================================================ -->
+<!-- Özel Dondurma Ustaları / Misyon Kartları -->
+<!-- ================================================ -->
 <div class="container style-one pb-90">
     <div class="row align-items-center mb-45">
         <div class="col-xl-6 col-lg-7 mb-md-10">
@@ -174,8 +175,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
     </div>
 </div>
 
-
-
+<!-- ================================================ -->
+<!-- İstatistik / Funfact -->
+<!-- ================================================ -->
 <div class="funfact-area style-one position-relative z-1 pt-120 pb-90">
     <img src="<?= $assetURL ?>img/top-zigzag-shape.svg" alt="shape"
         class="top-shape position-absolute top-0 start-0 w-100 z-n1">
@@ -206,6 +208,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
     </div>
 </div>
 
+<!-- ================================================ -->
+<!-- Hareketli Metin -->
+<!-- ================================================ -->
 <div class="move-text-wrapper overflow-hidden pt-120 mb-120">
     <div class="move-text style-one position-relative z-1">
         <ul class="d-flex align-items-center list-unstyled mb-0">
@@ -225,7 +230,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
     </div>
 </div>
 
-
+<!-- ================================================ -->
+<!-- Öne Çıkan Ürün / CTA -->
+<!-- ================================================ -->
 <section class="featured-product-area pb-90">
     <div class="container style-one">
         <div class="row">

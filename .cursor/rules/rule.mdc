@@ -13,7 +13,7 @@ alwaysApply: true
 
 6-Always separate between sections with a block comment in this format:
    <!-- ================================================ -->
-   <!-- Section Title / Description -->
+   <!-- Section Title -->
    <!-- ================================================ -->
 
 7-For dynamic links (URLs), always use $this->getURL — do not hardcode or build URLs manually.

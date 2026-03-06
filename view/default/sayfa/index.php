@@ -118,8 +118,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
                     <?php foreach ($kategoriler as $kategori):
                         $kategori_title = $kategori["baslik"];
                         $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "200x200");
-                        $kategori_url = $this->BaseURL("kategori_detay/" . $kategori["url"], $lang, 1);
-                        $urun_sayisi = $this->dbCount("urun", "aktif = 1 AND sil = 0 AND kid = " . $kategori["id"]);
+                        $kategori_url = $this->getURL($kategori, "urunler");
                     ?>
 
 
@@ -127,14 +126,10 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
                             <div class="category-card style-one text-center mb-30">
                                 <div class="category-img position-relative rounded-circle d-block mx-auto transition">
                                     <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
-                                    <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>#tabs-urunler-1" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                                    <a href="<?= $kategori_url ?>" class="position-absolute top-0 start-0 w-100 h-100"></a>
                                 </div>
                                 <h3 class="fs-24 fw-normal"><a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition"><?= $kategori_title ?></a></h3>
-                                <span>
-                                    <?php if ($urun_sayisi > 0): ?>
-                                        (<?= $urun_sayisi ?> Ürün)
-                                    <?php endif; ?>
-                                </span>
+
                             </div>
                         </div>
                     <?php endforeach; ?>

@@ -60,12 +60,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
             </div>
         </div>
     </div>
-    <!-- ================================================ -->
-
-
 
     <!-- ================================================ -->
-    <!-- Other Products Start -->
+    <!-- Diğer Ürünler -->
     <!-- ================================================ -->
     <div class="container style-one pb-90">
         <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Karpedo Dondurma</h6>
@@ -96,15 +93,12 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
     </div>
 
     <!-- ================================================ -->
-    <!-- Instagram Slider -->
+    <!-- Instagram Bölümü -->
     <!-- ================================================ -->
     <div class="container style-one">
         <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
         <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
         </h2>
     </div>
-    <!-- ================================================ -->
-    <!-- Instagram Slider -->
-    <!-- ================================================ -->
     <?php $this->instaSlider(); ?>  
 </div>

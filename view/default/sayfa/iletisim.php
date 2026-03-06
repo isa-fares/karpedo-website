@@ -18,6 +18,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
 <!-- İletişim İçerik -->
 <!-- ================================================ -->
 <div class="container style-one ptb-120">
+    <!-- ================================================ -->
+    <!-- İletişim Kartları (Adres / Telefon) -->
+    <!-- ================================================ -->
     <div
         class="contact-card-wrap style-one d-flex flex-wrap align-items-center justify-content-center round-20">
         <div class="contact-card style-one d-flex flex-wrap align-items-center mb-30">
@@ -30,9 +33,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
                 <p>
                     <?= $this->ayarlar("adres_merkez") ?>
                 </p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("email_merkez") ?></a>
+                <p><a href="<?= $this->linkEmail() ?>" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("email_merkez") ?></a>
                 </p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_merkez") ?></a>
+                <p><a href="<?= $this->linkTelefon() ?>" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_merkez") ?></a>
                 </p>
             </div>
         </div>
@@ -43,14 +46,16 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
             </div>
             <div class="contact-info">
                 <h3 class="fs-22 fw-normal">Kültü Şube</h3>
-                <p>N. Fazıl Mah. A. Türkeş Bul. İkizkent Sitesi, D:A Blok No:8, 46050 Onikişubat /
-                    Kahramanmaraş Türkiye</p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block">info@karpedo.com</a>
+                <p><?= $this->ayarlar("addres_abrika_merkez") ?></p>
+                <p><a href="<?= $this->linkEmail() ?>" class="text-para link-hover-primary transition d-block">info@karpedo.com</a>
                 </p>
-                <p><a href="#" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_kultu") ?></a></p>
+                <p><a href="<?= $this->linkTelefon() ?>" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_2merkez") ?></a></p>
             </div>
         </div>
     </div>
+    <!-- ================================================ -->
+    <!-- İletişim Formu ve Harita -->
+    <!-- ================================================ -->
     <div class="pt-120">
         <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-8">Karpedo Dondurma</h6>
         <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizimle İletişime Geçin
@@ -75,21 +80,21 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
                         <div class="form-group position-relative mb-25">
                             <input type="text" name="adi"
                                 class="w-100 ht-60 bg-ash text-para border-0 outline-0 round-10"
-                                placeholder="İsminiz" required>
+                                placeholder="İsminiz*" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-25">
                             <input type="email" name="email"
                                 class="w-100 ht-60 bg-ash text-para border-0 outline-0 round-10"
-                                placeholder="E-posta Adresiniz" required>
+                                placeholder="E-posta Adresiniz*" required>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group position-relative mb-25">
                             <input type="number" name="tel"
                                 class="w-100 ht-60 bg-ash text-para border-0 outline-0 round-10"
-                                placeholder="Telefon Numaranız" required>
+                                placeholder="Telefon Numaranız*" required>
                         </div>
                     </div>
                     <div class="col-12">
@@ -99,13 +104,15 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
                                 class="w-100 ht-206 bg-ash text-para border-0 outline-0 round-10 resize-0"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="captcha">
-                            <img class="captcha_image" src="<?= $this->baseURL("ajax/getcaptchaimage", "tr", 1) ?>">
-                            <input type="text" minlength="6" class="w-100 ht-60 bg-ash text-para border-0 outline-0 round-10" name="captcha_value" maxlength="6" required>
-                        </div>
-                        <small>* kodu değiştirmek için resmin üzerine tıklayın</small>
+                    <div class="col-12">
+                        <div class="form-group mb-25">
+                            <div class="captcha">
+                                <img class="captcha_image" src="<?= $this->baseURL("ajax/getcaptchaimage", "tr", 1) ?>">
+                                <input type="text" minlength="6" class="w-100 ht-60 bg-ash text-para border-0 outline-0 round-10" name="captcha_value" maxlength="6" placeholder="Güvenlik Kodu*" required>
+                            </div>
+                            <small>* kodu değiştirmek için resmin üzerine tıklayın</small>
 
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="col-xl-5 col-md-6">
@@ -124,8 +131,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
     </div>
 </div>
 
-
-
+<!-- ================================================ -->
+<!-- Instagram Bölümü -->
+<!-- ================================================ -->
 <div class="container style-one">
     <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
     <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin

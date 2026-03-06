@@ -92,6 +92,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
     </div>
 </div>
 
+<!-- ================================================ -->
+<!-- Instagram Bölümü -->
+<!-- ================================================ -->
 <div class="container style-one">
     <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
     <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin

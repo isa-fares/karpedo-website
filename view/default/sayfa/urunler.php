@@ -38,7 +38,7 @@ if (!empty($id) && (int)$id > 0) {
 } else {
     $br_param[] = ["title" => $baslik];
 }
-$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png');
+$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png', 'breadcrumb-area--urunler');
 ?>
 
 
@@ -47,7 +47,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png');
 <!-- Ürünler / Kategori İçerik -->
 <!-- ================================================ -->
 <div class="container style-one pt-120 pb-90">
-    <!-- ========== Görünüm: Kategoriler listesi -->
+    <!-- ================================================ -->
+    <!-- Kategori Listesi -->
+    <!-- ================================================ -->
     <?php if (empty($id) || (int)$id === 0): ?>
         <?php if (!empty($kategoriler)): ?>
             <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Keşfedin</h6>
@@ -80,7 +82,9 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png');
             </div>
         <?php endif; ?>
 
-        <!-- ==========  Kategorideki ürünler -->
+    <!-- ================================================ -->
+    <!-- Kategorideki Ürün Listesi -->
+    <!-- ================================================ -->
     <?php else: ?>
         <div class="row justify-content-center" style="row-gap: 30px;">
             <?php if (!empty($urunler)): ?>

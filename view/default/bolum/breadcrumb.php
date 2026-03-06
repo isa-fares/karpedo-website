@@ -6,17 +6,19 @@
  * @var array $param
  * @var string $lang
  * @var string|null $br_image sayfadan gelen sağ görsel URL (yoksa varsayılan)
+ * @var string|null $br_class isteğe bağlı wrapper CSS sınıfı (sayfa özel stilleri)
  */
 // BaseURL yerine theme URL sadece asset için (rule 8)
 $assetURL = isset($assetURL) ? $assetURL : $this->themeURL;
 $toplam = is_array($param) ? count($param) : 0;
 $br_title = $toplam > 0 ? $param[$toplam - 1]["title"] : "";
 $br_img_src = !empty($br_image) ? $br_image : ($assetURL . 'img/breadcrumb/br-img-2.png');
+$br_extra_class = !empty($br_class) ? ' ' . $this->temizle($br_class) : '';
 ?>
 <!-- ================================================ -->
 <!-- Breadcrumb Area -->
 <!-- ================================================ -->
-<div class="breadcrumb-area position-relative z-1">
+<div class="breadcrumb-area position-relative z-1<?= $br_extra_class ?>">
     <img src="<?= $assetURL ?>img/breadcrumb/br-dot-shape.png" alt="Shape"
         class="br-bg-shape position-absolute top-0 start-0 w-100 h-100 z-n1">
     <img src="<?= $assetURL ?>img/top-zigzag-shape.svg" alt="Shape"

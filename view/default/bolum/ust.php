@@ -64,7 +64,7 @@ $active = function($pages) use ($nav_page) { return in_array($nav_page, (array)$
                                 <li><a class="<?= $active('index') ?>" href="<?= $this->BaseURL("index", $lang, 1) ?>">Anasayfa</a></li>
                                 <li><a class="<?= $active('hakkimizda') ?>" href="<?= $this->BaseURL("hakkimizda", $lang, 1) ?>">Hakkımızda</a></li>
                                 <li class="menu-item-has-children <?= $active(['urunler', 'urun_detay']) ?>">
-                                    <a href="javascript:void(0)" class="<?= $active(['urunler', 'urun_detay']) ?>">Ürünler<i class="ri-add-line"></i></a>
+                                    <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>" class="<?= $active(['urunler', 'urun_detay']) ?>">Ürünler<i class="ri-add-line"></i></a>
                                     <ul class="menu-subs menu-column-1">
                                         <?php foreach ($kategori as $kategori) :
                                             $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "480x320");

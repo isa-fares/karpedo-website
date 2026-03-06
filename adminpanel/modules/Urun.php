@@ -183,7 +183,7 @@ class Urun  extends Settings
             $tabForm[$dil]['text']  = $form->input(array("required" => array("tr"), 'value' => ((isset($data[$dil]['baslik']) ? $this->temizle($data[$dil]['baslik']) : '')), 'title' => 'Başlık', 'lang' => $dil, 'name' => 'baslik'));
 
             //$tabForm[$dil]['text']  .= $form->input(array('value'=>((isset($data[$dil]['kisi']) ? $this->temizle($data[$dil]['kisi']) :'')),'title'=>'Kaç Kişilik','lang'=>$dil,'name'=>'kisi'));
-            $tabForm[$dil]['text'] .= $form->textarea(array('value' => ((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) : '')), 'title' => 'Özet Açıklama', 'name' => 'ozet', 'lang' => $dil));
+            // $tabForm[$dil]['text'] .= $form->textarea(array('value' => ((isset($data[$dil]['ozet']) ? $this->temizle($data[$dil]['ozet']) : '')), 'title' => 'Özet Açıklama', 'name' => 'ozet', 'lang' => $dil));
 
             // $tabForm[$dil]['text'] .= $form->textEditor(array('value' => ((isset($data[$dil]['icindekiler']) ? $this->temizle($data[$dil]['icindekiler']) : '')), 'title' => 'İçindekiler', 'name' => 'icindekiler', 'lang' => $dil, 'height' => '250'));
 
@@ -206,7 +206,7 @@ class Urun  extends Settings
         $text .= $form->openColumn(4);
 
 
-        $text .= $form->file(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Logo', 'name' => 'resim', 'resimBoyut' => $this->modul_image_size($this->modul_info["id"]), 'src' => ((isset($data['tr']['resim'])) ? $data['tr']['resim'] : '')));
+        $text .= $form->file2(array('url' => $this->BaseURL('upload') . "/" . $this->modulName, 'folder' => $this->modulName, 'title' => 'Logo', 'name' => 'resim', 'resimBoyut' => $this->modul_image_size($this->modul_info["id"]), 'src' => ((isset($data['tr']['resim'])) ? $data['tr']['resim'] : '')));
 
         $text .= $form->select(array('title' => 'Kategori Seçiniz', 'name' => 'kid', 'data' => $form->parent(array('sql' => "select * from " . $this->ktable . " WHERE sil <> 1 and ", 'option' => array('value' => 'id', 'title' => 'baslik'), 'kat' => 'ustu', 'selected' => ((isset($data['tr']['kid'])) ? $data['tr']['kid'] : $request_kid)), 0, 0)));
 
@@ -449,7 +449,7 @@ class Urun  extends Settings
 
         $text .= $form->openColumn(4);
 
-            $text.= $form->file2(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"200x200",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
+            $text.= $form->file2(array('url'=>$this->BaseURL('upload')."/".$this->ktable,'folder'=>$this->ktable,'title'=>'Sayfa Banner Resmi','name'=>'banner_resim','resimBoyut'=>"400x336",'src'=>((isset($data['tr']['resim'])) ? $data['tr']['resim'] :'')));
 
 
 

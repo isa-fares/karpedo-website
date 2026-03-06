@@ -149,6 +149,11 @@ $foto_galeri = $this->dbLangSelect("dosyalar", "aktif = 1 AND sil = 0 AND type =
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center items-center">
+            <div class="col-12 text-center">
+                <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>" class="btn style-two position-relative z-1 round-10">Tüm Ürünlerimizi İnceleyin</a>
+            </div>
+        </div>
     </div>
 </section>
 

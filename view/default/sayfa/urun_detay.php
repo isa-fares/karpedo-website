@@ -8,12 +8,12 @@
  */
 
 $urun = $this->dbLangSelectRow("urun", array("id" => $id, "master_id" => $id), "resim", "", "ORDER BY sira DESC, id DESC");
-$urun_image = $this->dbResimAl($urun["resim"], "urun", "800x0");
+$urun_image = $this->dbResimAl($urun["resim"], "urun", "1200x0");
 $urun_baslik = $urun["baslik"];
 $urun_url = $this->getURL($urun, "urun_detay");
 $urun_ozet = $urun["ozet"];
-$urun_detay = $this->temizle($urun["icindekiler"]);
-$urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC");
+$urun_detay = $this->temizle($urun["detay"]);
+$urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC LIMIT 5");
 
 // ============================================
 // PAGE CONFIGURATION (tek dil - başlık ürün adından)
@@ -45,11 +45,11 @@ $urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]),
                     <li><?= $urunuKategori["baslik"] ?></li>
                 </ul>
             </div>
-            <div class="col-xxl-4 col-lg-3 col-md-2">
+            <!-- <div class="col-xxl-4 col-lg-3 col-md-2">
                 <div class="br-img">
                     <img src="<?= $assetURL ?>img/breadcrumb/br-img-10.png" alt="Image" class="d-block mx-auto">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -57,7 +57,7 @@ $urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]),
 
 
 
-<div class="container style-one pt-120">
+<div class="container style-one pt-30">
     <div class="product-details-wrapper pb-90">
         <div class="row align-items-center">
             <div class="col-xxl-5 col-lg-6">
@@ -75,34 +75,17 @@ $urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]),
                 <div class="single-product-info">
                     <h1 class="fw-normal text-title"><?= $urun_baslik ?></h1>
                     <p>
-                        <?= $urun_ozet ? $urun_ozet : "Bu Alanın içeriği güncellenmektedir." ?>
+                        <?= $urun_detay ? $urun_detay : "Bu Alanın içeriği güncellenmektedir." ?>
+                        
                     </p>
                     <a href="<?= $this->langURL("iletisim") ?>" class="btn style-two position-relative z-1 round-10 mb-25">Tedarik
                         İçin İletişime Geçin</a>
-                    <div class="post-share d-flex flex-wrap align-items-center">
-                        <span class="text-para fw-semibold me-3">Paylaş:</span>
-                        <ul class="social-profile style-three list-unstyled mb-0">
-                            <?= $this->getustSocialList() ?>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <ul class="nav nav-tabs list-unstyled product-tablist style-two d-inline-flex align-items-center mb-25"
-        role="tablist">
-        <li class="nav-item border-0">
-            <button class="nav-link border-0 active" data-bs-toggle="tab" data-bs-target="#tab_1"
-                type="button" role="tab">Açıklama</button>
-        </li>
-    </ul>
-    <div class="tab-content product-tab-content pb-120">
-        <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
-            <div class="product_desc content-detail">
-                <?= $urun_detay ? $urun_detay : "Bu Alanın içeriği güncellenmektedir." ?>
-            </div>
-        </div>
-    </div>
+
 
 
 

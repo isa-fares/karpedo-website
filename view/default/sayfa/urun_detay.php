@@ -8,7 +8,7 @@
  */
 
 $urun = $this->dbLangSelectRow("urun", array("id" => $id, "master_id" => $id), "resim", "", "ORDER BY sira DESC, id DESC");
-$urun_image = $this->dbResimAl($urun["resim"], "urun", "400x336");
+$urun_image = $this->dbResimAl($urun["resim"], "urun", "800x0");
 $urun_baslik = $urun["baslik"];
 $urun_url = $this->getURL($urun, "urun_detay");
 $urun_ozet = $urun["ozet"];
@@ -20,7 +20,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''",
 // ============================================
 $sayfa = "urun_detay";
 $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
-
+$urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]), "baslik", "", "ORDER BY sira DESC, id DESC");
 ?>
 
 <div class="breadcrumb-area position-relative z-1">
@@ -38,11 +38,11 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
+                <h2 class="br-title fw-normal mb-12"><?= $urun_baslik ?></h2>
                 <ul class="br-menu list-unstyled mb-0">
                     <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
                     <li><a href="<?= $this->langURL("urunler") ?>">Ürünler</a></li>
-                    <li><?= ($urun_baslik) ?></li>
+                    <li><?= $urunuKategori["baslik"] ?></li>
                 </ul>
             </div>
             <div class="col-xxl-4 col-lg-3 col-md-2">
@@ -64,10 +64,10 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                 <div
                     class="single-product-img bg-ash d-flex flex-column align-items-center justify-content-center round-20 mb-md-30">
                     <a data-fslightbox="gallery"
-                        href="https://www.karpedo.com/wp-content/uploads/2022/04/27_mango_reyon_dondurma00.png"
+                        href="<?= $urun_image ?>"
                         class="d-block">
-                        <img src="https://www.karpedo.com/wp-content/uploads/2022/04/27_mango_reyon_dondurma00.png"
-                            alt="Product" class="d-block mx-auto">
+                        <img src="<?= $urun_image ?>"
+                            alt="Product" class="d-block mx-auto w-100">
                     </a>
                 </div>
             </div>
@@ -75,7 +75,7 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                 <div class="single-product-info">
                     <h1 class="fw-normal text-title"><?= $urun_baslik ?></h1>
                     <p>
-                        <?= $urun_ozet ? $urun_ozet : "Bu sayfanın içeriği güncellenmektedir." ?>
+                        <?= $urun_ozet ? $urun_ozet : "Bu Alanın içeriği güncellenmektedir." ?>
                     </p>
                     <a href="<?= $this->langURL("iletisim") ?>" class="btn style-two position-relative z-1 round-10 mb-25">Tedarik
                         İçin İletişime Geçin</a>
@@ -99,7 +99,7 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
     <div class="tab-content product-tab-content pb-120">
         <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
             <div class="product_desc content-detail">
-                <?= $urun_detay ? $urun_detay : "Bu sayfanın içeriği güncellenmektedir." ?>
+                <?= $urun_detay ? $urun_detay : "Bu Alanın içeriği güncellenmektedir." ?>
             </div>
         </div>
     </div>
@@ -114,7 +114,7 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
 
             <?php foreach ($urunler as $urun) :
                 if ($urun["id"] == $id) continue;
-                $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x336");
+                $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x0");
                 $urun_baslik = $urun["baslik"];
                 $urun_url = $this->getURL($urun, "urun_detay");
             ?>
@@ -268,4 +268,5 @@ $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
                 </a>
             </div>
         </div>
+    </div>
     </div>

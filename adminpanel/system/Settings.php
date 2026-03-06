@@ -861,9 +861,9 @@ class Settings extends Func
         if ($this->user_type == 1) {
             $domain = explode('.',$_SERVER["SERVER_NAME"]);
             $domain = $domain[count($domain)-1];
-            if($_SERVER["SERVER_NAME"] == "localhost" or $domain=="test" or $domain == 'vm' ){
-                $text .= "<a href='#' class='mt-10 btn-block btn btn-danger truncateTable'><i class='fa fa-remove'></i> Veritabanı Ve Uplad Klasörünü Boşalt</a>";
-            }
+            // if($_SERVER["SERVER_NAME"] == "localhost" or $domain=="test" or $domain == 'vm' ){
+            //     $text .= "<a href='#' class='mt-10 btn-block btn btn-danger truncateTable'><i class='fa fa-remove'></i> Veritabanı Ve Uplad Klasörünü Boşalt</a>";
+            // }
         }
 
 

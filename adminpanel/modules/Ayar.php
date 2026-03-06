@@ -135,7 +135,7 @@ class Ayar extends Settings {
             foreach ($tabsList as $name=>$value):
 
                 $tabsForm[$name]['text'] = $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-phone-in-talk",'value'=>$this->get_element('telefon_'.$name),'title'=>'Telefon','type'=>'text', 'name'=>'telefon_'.$name,'id'=>'telefon_'.$name));
-                $tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-cellphone-android",'value'=>$this->get_element('telefon_2'.$name),'title'=>'Telefon ','type'=>'text', 'name'=>'telefon_2'.$name,'help'=>''));
+                $tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-cellphone-android",'value'=>$this->get_element('telefon_2'.$name),'title'=>'Telefon 2 ','type'=>'text', 'name'=>'telefon_2'.$name,'help'=>''));
 //                $tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-phone-in-talk",'value'=>$this->get_element('bilmer_'.$name),'title'=>'Bilgi Merkezi','type'=>'text', 'name'=>'bilmer_'.$name,'help'=>''));
 
                 //$tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-cellphone-android",'value'=>$this->get_element('telefon_3'.$name),'title'=>'Telefon 3','type'=>'text', 'name'=>'telefon_3'.$name,'help'=>''));
@@ -143,8 +143,8 @@ class Ayar extends Settings {
                 $tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-fax",'value'=>$this->get_element('faks_'.$name),'title'=>'Faks ','type'=>'text', 'name'=>'faks_'.$name,'id'=>'faks_'.$name,'help'=>''));
                 //$tabsForm[$name]['text'].= $form->input(array("mask"=>"+99 (999) 999 99 99", "icon"=>"mdi mdi-cellphone-android",'value'=>$this->get_element('gsm_'.$name),'title'=>'Gsm','type'=>'text', 'name'=>'gsm_'.$name,'id'=>'gsm_'.$name,'help'=>''));
                 
-                $tabsForm[$name]['text'].= $form->textarea(array("icon"=>"mdi mdi-home-variant",'value'=>$this->get_element('adres_'.$name),'title'=>'Adres ','type'=>'text', 'name'=>'adres_'.$name,'id'=>'adres_'.$name));
-                $tabsForm[$name]['text'].= $form->textarea(array("icon"=>"mdi mdi-home-variant",'value'=>$this->get_element('addres_abrika_'.$name),'title'=> 'Fabrika adresi','type'=>'text', 'name'=> 'addres_abrika_'.$name,'id'=> 'addres_abrika_'.$name));
+                $tabsForm[$name]['text'].= $form->textarea(array("icon"=>"mdi mdi-home-variant",'value'=>$this->get_element('adres_'.$name),'title'=>'Fabrika Adresi ','type'=>'text', 'name'=>'adres_'.$name,'id'=>'adres_'.$name));
+                $tabsForm[$name]['text'].= $form->textarea(array("icon"=>"mdi mdi-home-variant",'value'=>$this->get_element('addres_abrika_'.$name),'title'=> 'Kültü Şube Adresi','type'=>'text', 'name'=> 'addres_abrika_'.$name,'id'=> 'addres_abrika_'.$name));
                 $tabsForm[$name]['text'].= $form->input(array("icon"=>"mdi mdi-email-variant", 'value'=>$this->get_element('email_'.$name),'title'=>'E-posta ','type'=>'text', 'name'=>'email_'.$name,'id'=>'email_'.$name));
                 //$tabsForm[$name]['text'].= $form->input(array("icon"=>"mdi mdi-email-variant", 'value'=>$this->get_element('musteri_email_'.$name),'title'=>'Müşteri Hizmetleri E-Posta ','type'=>'text', 'name'=>'musteri_email_'.$name,'id'=>'musteri_email_'.$name));
                 //$tabsForm[$name]['text'].= $form->input(array("icon"=>"mdi mdi-email-variant", 'value'=>$this->get_element('email_2_'.$name),'title'=>'E-posta 2','type'=>'text', 'name'=>'email_2_'.$name,'id'=>'email_2_'.$name));

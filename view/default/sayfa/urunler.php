@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ürünler listesi (kategoriye göre)
  * @var $this FrontClass|Loader
@@ -16,6 +17,8 @@ $this->sayfaBaslik = $baslik . " - " . $this->ayarlar("title_" . $lang);
 
 // Ürünler: seçilen kategoriye göre
 $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' AND kid = $id", "resim", "", "ORDER BY sira DESC, id DESC");
+$kategori = $this->dbLangSelectRow("kategori", array("id" => $id), "baslik", "", "ORDER BY sira DESC, id DESC");
+$kategoriBaslik = $kategori["baslik"];
 ?>
 <div class="breadcrumb-area position-relative z-1">
     <img src="<?= $assetURL ?>img/breadcrumb/br-dot-shape.png" alt="Shape"
@@ -32,7 +35,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-6 col-md-8 mb-sm-10">
-                <h2 class="br-title fw-normal mb-12"><?= $this->sayfaBaslik() ?></h2>
+                <h2 class="br-title fw-normal mb-12"><?= $kategoriBaslik ?></h2>
                 <ul class="br-menu list-unstyled mb-0">
                     <li><a href="<?= $this->langURL("index") ?>"><?= $this->lang->header("index") ?: 'Anasayfa' ?></a></li>
                     <li><?= $baslik ?></li>
@@ -46,12 +49,14 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
         </div>
     </div>
 </div>
+
+
 <div class="container style-one pt-120 pb-90">
     <div class="row justify-content-center" style="row-gap: 30px;">
         <?php if ($urunler) : ?>
             <?php foreach ($urunler as $urun) :
 
-                $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x336");
+                $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x0");
                 $urun_baslik = $urun["baslik"];
                 $urun_url = $this->getURL($urun, "urun_detay");
             ?>
@@ -74,7 +79,7 @@ $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> '' A
             <?php endforeach; ?>
         <?php else : ?>
             <div class="col-12">
-                <div class="alert text-center text-white" style="background-color:#111828 ">
+                <div class="alert alert-guncelleme text-center ">
                     <h4 class="mb-0">Bu sayfanın içeriği güncellenmektedir.</h4>
                     <h4 class="mb-0">Lütfen daha sonra tekrar kontrol ediniz.</h4>
                 </div>

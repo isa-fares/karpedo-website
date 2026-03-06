@@ -25,15 +25,16 @@ class Data extends Func  {
         $domain = $domain[count($domain)-1];
         $serverName = $_SERVER["SERVER_NAME"] ?? '';
 
-        // Yerel geliştirme: localhost, .test, .vm veya proje adı (örn. karpedo) ile erişimde local config kullan
+        // Yerel geliştirme: localhost, .test, .vm veya proje adı ile erişimde local config; diğer tüm sunucularda host (canlı) config
         if ($serverName === 'localhost' || $serverName === '127.0.0.1'
             || $domain === 'test' || $domain === 'vm' || $serverName === 'karpedo') {
             $data = $database[$dataType]["local"];
-            } elseif ($serverName === 'karpedo.local') {
+        } elseif ($serverName === 'karpedo.local') {
             $data = $database[$dataType]["host"];
-            //date_default_timezone_set('Etc/GMT+3');
+        } else {
+            // Canlı sunucu: host config kullan (null geçmesini önler)
+            $data = isset($database[$dataType]["host"]) ? $database[$dataType]["host"] : $database[$dataType]["local"];
         }
-
 
         $this->conn =  $this->Baglan($data);
 
@@ -48,6 +49,9 @@ class Data extends Func  {
 
     public function Baglan($settings=array())
     {
+        if (!is_array($settings) || empty($settings)) {
+            throw new \InvalidArgumentException('Veritabanı ayarları bulunamadı. include/ayarlar/database.php ve sunucu adını kontrol edin.');
+        }
         unset($settings['debug']);
 
         try {

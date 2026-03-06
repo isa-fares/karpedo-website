@@ -79,6 +79,15 @@ input:checked + .slider:before {
   display: block !important;
 }
 
+/* Ürünler "içerik güncelleniyor" kutusu: light #f3edfa, dark #12131b */
+.alert-guncelleme,
+.theme-light .alert-guncelleme {
+  background-color: #f3edfa;
+}
+.theme-dark .alert-guncelleme {
+  background-color: #12131b;
+}
+
 .theme-dark {
   /*-------------------------------
       Header CSS

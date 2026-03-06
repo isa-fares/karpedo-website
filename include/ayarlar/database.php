@@ -25,9 +25,9 @@ return [
              'host' =>
                 [
                      'host' => 'localhost',
-                     'dbname' => '',
-                     'user' =>'',
-                     'password' => '',
+                     'dbname' => 'demovmd_karpedo',
+                     'user' => 'demovmd_karpedo',
+                     'password' => 'vjzCBw4tbLgPDzWKcRcQ',
                      'charset' => 'utf8',
                      'driver' => 'pdo_mysql',
                      'debug' => false,

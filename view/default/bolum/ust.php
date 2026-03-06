@@ -8,6 +8,9 @@
  */
 $kategori = $this->dbLangSelect("kategori", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira ASC, id ASC");
 $katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1));
+$nav_page = isset($page) ? $page : 'index';
+// Tek yerden aktif sınıfı: $active('index') veya $active(['urunler','urun_detay'])
+$active = function($pages) use ($nav_page) { return in_array($nav_page, (array)$pages, true) ? 'active' : ''; };
 
 ?>
 <!-- Page Header-->
@@ -58,10 +61,10 @@ $katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1))
                                         class="ri-close-line"></i></button>
                             </div>
                             <ul class="menu-section p-0 mb-0 ms-0 lh-1 d-flex align-items-center">
-                                <li><a class="active" href="<?= $this->BaseURL("index", $lang, 1) ?>">Anasayfa</a></li>
-                                <li><a href="<?= $this->BaseURL("hakkimizda", $lang, 1) ?>">Hakkımızda</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0)">Ürünler<i class="ri-add-line"></i></a>
+                                <li><a class="<?= $active('index') ?>" href="<?= $this->BaseURL("index", $lang, 1) ?>">Anasayfa</a></li>
+                                <li><a class="<?= $active('hakkimizda') ?>" href="<?= $this->BaseURL("hakkimizda", $lang, 1) ?>">Hakkımızda</a></li>
+                                <li class="menu-item-has-children <?= $active(['urunler', 'urun_detay']) ?>">
+                                    <a href="javascript:void(0)" class="<?= $active(['urunler', 'urun_detay']) ?>">Ürünler<i class="ri-add-line"></i></a>
                                     <ul class="menu-subs menu-column-1">
                                         <?php foreach ($kategori as $kategori) :
                                             $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "480x320");
@@ -78,9 +81,9 @@ $katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1))
                                         <img src="<?= $assetURL ?>img/logo_dark.png" alt="Logo" class="logo-dark">
                                     </a>
                                 </li>
-                                <li><a href="<?= $this->baseURL('e-katalog.html') . '/' . $katalog[$mid . 'id'] ?>">E-Katalog</a></li>
-                                <li><a href="<?= $this->BaseURL("blog", $lang, 1) ?>">Blog</a></li>
-                                <li><a href="<?= $this->BaseURL("iletisim", $lang, 1) ?>">İletişim</a></li>
+                                <li><a class="<?= $active('e-katalog') ?>" href="<?= $this->baseURL('e-katalog.html') . '/' . $katalog[$mid . 'id'] ?>">E-Katalog</a></li>
+                                <li><a class="<?= $active(['blog', 'blog_detay']) ?>" href="<?= $this->BaseURL("blog", $lang, 1) ?>">Blog</a></li>
+                                <li><a class="<?= $active('iletisim') ?>" href="<?= $this->BaseURL("iletisim", $lang, 1) ?>">İletişim</a></li>
                             </ul>
                         </nav>
                     </div>

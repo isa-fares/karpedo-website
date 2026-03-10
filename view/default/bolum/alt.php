@@ -65,7 +65,7 @@ $katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1))
                                 $baslik = $kat["baslik"];
                                 $url = $kat["url"];
                                 $url = $this->getURL($kat, "urunler");
-                            ?>
+                                 ?>
                                 <li><a href="<?= $url ?>" class="link style-two"><?= $this->temizle($baslik) ?></a></li>
                             <? endforeach; ?>
                         </ul>
@@ -81,7 +81,7 @@ $katalog = $this->dbLangSelectRow("katalog", array("id" => 1, "master_id" => 1))
                                 <h6 class="font-primary fw-bold fs-18 text-title mb-6">Adres</h6>
                                 <p class="text-title mb-0">
                                     <?= $this->ayarlar("adres_merkez") ?>
-                                </p>
+                                    </p>
                             </li>
                             <li class="position-relative">
                                 <img src="<?= $assetURL ?>img/icons/mail-small.svg" alt="Icon">

@@ -1792,6 +1792,14 @@ EOT;
     /**
      * @return string
      */
+    public function linkTelefon2(){
+        $tel = $this->ayarlar("telefon_2merkez");
+        return $tel ? "tel:".$this->telefonFormat($tel) : "#";
+    }
+
+    /**
+     * @return string
+     */
     public function linkEmail(){
         return "mailto:".$this->ayarlar("email_merkez");
     }

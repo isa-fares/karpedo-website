@@ -194,9 +194,9 @@
   }
 
   .breadcrumb-area .br-title {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 4px;
+      font-size: 26px !important;
+      line-height: 1.2 !important;
+      margin-bottom: 4px;
   }
 
   .breadcrumb-area .br-img img {

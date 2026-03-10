@@ -211,7 +211,7 @@
             delay: 3000,
             disableOnInteraction: false
         },
-        spaceBetween: 24,
+        spaceBetween: 15,
         breakpoints: {
             0: {
                 slidesPerView: 1

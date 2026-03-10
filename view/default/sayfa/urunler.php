@@ -57,7 +57,7 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png', 'breadcr
             <div class="row justify-content-center" style="row-gap: 30px;">
                 <?php foreach ($kategoriler as $kat):
                     $kategori_title = $kat["baslik"];
-                    $kategori_image = $this->dbResimAl($kat["resim"], "kategori", "400x336");
+                    $kategori_image = $this->dbResimAl($kat["resim"], "kategori", "1200x800");
                     $kategori_url = $this->getURL($kat, "urunler", $lang, 1);
                 ?>
                     <div class="col-xxl-3 col-xl-4 col-md-6">
@@ -89,7 +89,7 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-3.png', 'breadcr
         <div class="row justify-content-center" style="row-gap: 30px;">
             <?php if (!empty($urunler)): ?>
                 <?php foreach ($urunler as $urun):
-                    $urun_image = $this->dbResimAl($urun["resim"], "urun", "400x0");
+                    $urun_image = $this->dbResimAl($urun["resim"], "urun", "1200x800");
                     $urun_baslik = $urun["baslik"];
                     $urun_url = $this->getURL($urun, "urun_detay");
                 ?>

@@ -37,17 +37,12 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
                     <p class="fs-xxl-18 pe-xl-5">El yapımı dondurmanın verdiği mutluluk gibisi yoktur; biz
                         de Karpedo olarak bu deneyimi en üst seviyeye taşıyoruz. En kaliteli malzemelerle,
                         geleneksel yöntemlerle hazırladığımız her bir kaşıkta gerçek lezzeti sunuyoruz.</p>
-                    <div class="btn-wrap d-flex flex-wrap align-items-center gap-3">
-                        <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>" class="btn style-two position-relative z-1 round-10">Ürünlerimizi
-                            İnceleyin</a>
-                        <a data-fslightbox="video1" href="https://www.youtube.com/watch?v=u31qwQUeGuM"
-                            class="play-btn style-one d-flex flex-wrap align-items-center transition">
-                            <span
-                                class="play-icon d-flex flex-column align-items-center justify-content-center rounded-circle transition"><i
-                                    class="ri-play-large-fill"></i></span>
-                            <span class="text-title fw-bold play-text">Tanıtım Filmimizi İzleyin</span>
-                        </a>
-                    </div>
+
+                </div>
+                <div class="btn-wrap d-flex flex-wrap align-items-center gap-3">
+                    <a href="<?= $this->BaseURL("urunler", $lang, 1) ?>" class="btn style-two position-relative z-1 round-10">Ürünlerimizi
+                        İnceleyin</a>
+
                 </div>
             </div>
             <div class="col-lg-6">
@@ -117,7 +112,8 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
 
                     <?php foreach ($kategoriler as $kategori):
                         $kategori_title = $kategori["baslik"];
-                        $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "200x200");
+                        $kategori_title = str_replace("Dondurma", "", $kategori_title);
+                        $kategori_image = $this->dbResimAl($kategori["resim"], "kategori", "400x400");
                         $kategori_url = $this->getURL($kategori, "urunler");
                     ?>
 
@@ -125,10 +121,16 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
                         <div class="swiper-slide">
                             <div class="category-card style-one text-center mb-30">
                                 <div class="category-img position-relative rounded-circle d-block mx-auto transition">
+                                    <a href="<?=  $kategori_url ?>" class="position-absolute top-0 start-0 w-100 h-100">
                                     <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
-                                    <a href="<?= $kategori_url ?>" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                                    </a>
                                 </div>
-                                <h3 class="fs-24 fw-normal"><a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition"><?= $kategori_title ?></a></h3>
+                                <h3 class="fs-24 fw-normal">
+                                <a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition">
+                                    <?= $kategori_title ?>
+                                    <br>
+                                    Dondurma
+                                </a></h3>
 
                             </div>
                         </div>
@@ -202,13 +204,14 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
         <img src="<?= $assetURL ?>img/discount/discount-product-3.png" alt="Image" class="offer-img-one z-n1">
         <div class="container text-center">
             <div class="ft_inner">
-                <h6 class="section-subtile fs-20 fw-light text_primary mb-10">Something For Everyone</h6>
+               <h6 class="section-subtile fs-20 fw-light text_primary mb-10">Herkes İçin Bir Şey</h6>
+
                 <h2 class="section-title style-one fw-normal text-title mb-15">Dondurma ustalarının mahir
                     ellerinden benzersiz bir lezzet... </h2>
                 <p class="fs-xxl-18 text-center text-title mb-30">Firmamız Kahramanmaraş
                     Dulkadiroğlu’nda
-                    100 m2
-                    alanda 1995 yılında Kahramanmaraş dondurması üretimine başlayıp bugün 10.000 m2
+                    100 m<sup>2</sup>
+                    alanda 1995 yılında Kahramanmaraş dondurması üretimine başlayıp bugün 10.000 m<sup>2</sup>
                     alanda,
                     33
                     çeşit dondurma üretimi yapmaktadır.</p>

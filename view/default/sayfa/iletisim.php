@@ -45,11 +45,11 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
                 <img src="<?= $assetURL ?>img/icons/pin-large-white.svg" alt="Icon">
             </div>
             <div class="contact-info">
-                <h3 class="fs-22 fw-normal">Kültü Şube</h3>
+                <h3 class="fs-22 fw-normal">Şube</h3>
                 <p><?= $this->ayarlar("addres_abrika_merkez") ?></p>
                 <p><a href="<?= $this->linkEmail() ?>" class="text-para link-hover-primary transition d-block">info@karpedo.com</a>
                 </p>
-                <p><a href="<?= $this->linkTelefon() ?>" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_2merkez") ?></a></p>
+                <p><a href="<?= $this->linkTelefon2() ?>" class="text-para link-hover-primary transition d-block"><?= $this->ayarlar("telefon_2merkez") ?></a></p>
             </div>
         </div>
     </div>

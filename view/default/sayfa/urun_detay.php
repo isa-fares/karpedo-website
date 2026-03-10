@@ -16,6 +16,7 @@ $urun_ozet = $urun["ozet"];
 $urun_detay = $this->temizle($urun["detay"]);
 $urunler = $this->dbLangSelect("urun", "aktif = 1 AND sil = 0 AND baslik <> ''", "resim", "", "ORDER BY sira DESC, id DESC LIMIT 5");
 $ek_resim = $this->dbResimAl($urun["ek_resim"], "urun", "400x0");
+$ek_resim = $ek_resim ?: $assetURL . 'img/breadcrumb/br-img-2.png';
 // ============================================
 // PAGE CONFIGURATION (tek dil - başlık ürün adından)
 // ============================================
@@ -33,15 +34,15 @@ $br_param = [
     ["title" => "Ürünler", "href" => $this->langURL("urunler")],
     ["title" => $urun_baslik],
 ];
-$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
+$this->breadcrumb($br_param, $ek_resim);
 ?>
 
 <!-- ================================================ -->
 <!-- Product Details Wrapper Start -->
 <!-- ================================================ -->
-<div class="container style-one pt-120">
+<div class="container style-one " style="padding-top:30px;">
     <div class="product-details-wrapper pb-90 ">
-        <div class="row align-items-center ">
+        <div class="row  ">
             <div class="col-xxl-5 col-lg-6">
                 <div
                     class="single-product-img bg-ash d-flex flex-column align-items-center justify-content-center round-20 mb-md-30">
@@ -60,10 +61,13 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ================================================ -->
-    <!-- Diğer Ürünler -->
-    <!-- ================================================ -->
+<!-- ================================================ -->
+<!-- Diğer Ürünler -->
+<!-- ================================================ -->
+<div class="detail_pink">
+
     <div class="container style-one pb-90">
         <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Karpedo Dondurma</h6>
         <h2 class="section-title style-one fw-normal text-title text-center mb-45">Diğer Ürünlerimiz</h2>
@@ -91,14 +95,14 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-2.png');
             <?php endforeach; ?>
         </div>
     </div>
-
-    <!-- ================================================ -->
-    <!-- Instagram Bölümü -->
-    <!-- ================================================ -->
-    <div class="container style-one">
-        <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
-        <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
-        </h2>
-    </div>
-    <?php $this->instaSlider(); ?>  
 </div>
+
+<!-- ================================================ -->
+<!-- Instagram Bölümü -->
+<!-- ================================================ -->
+<div class="container style-one">
+    <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-10">Instagram</h6>
+    <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizi Instagram'da Takip Edin
+    </h2>
+</div>
+<?php $this->instaSlider(); ?>

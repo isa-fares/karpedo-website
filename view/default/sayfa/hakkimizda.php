@@ -25,7 +25,6 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
         <div class="row align-items-center">
             <div class="col-lg-6 pe-xxl-2">
                 <div class="about-img-wrap position-relative z-1 overflow-hidden mb-md-30">
-                    <span class="corner-shape-left position-absolute"></span>
                     <img src="<?= $assetURL ?>img/about/about-1.jpg" alt="Image" class="about-img">
                 </div>
             </div>

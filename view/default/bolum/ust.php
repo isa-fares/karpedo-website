@@ -81,7 +81,9 @@ $active = function($pages) use ($nav_page) { return in_array($nav_page, (array)$
                                         <img src="<?= $assetURL ?>img/logo_dark.png" alt="Logo" class="logo-dark">
                                     </a>
                                 </li>
-                                <li><a class="<?= $active('e-katalog') ?>" href="<?= $this->baseURL('e-katalog.html') . '/' . $katalog[$mid . 'id'] ?>">E-Katalog</a></li>
+                            <!-- <li><a class="<?= $active('e-katalog') ?>" href="<?= $this->baseURL('e-katalog.html') . '/' . $katalog[$mid . 'id'] ?>">E-Katalog</a></li> -->
+                                <li><a class="<?= $active('e-katalog') ?>" href="#">E-Katalog</a></li>
+
                                 <li><a class="<?= $active(['blog', 'blog_detay']) ?>" href="<?= $this->BaseURL("blog", $lang, 1) ?>">Blog</a></li>
                                 <li><a class="<?= $active('iletisim') ?>" href="<?= $this->BaseURL("iletisim", $lang, 1) ?>">İletişim</a></li>
                             </ul>

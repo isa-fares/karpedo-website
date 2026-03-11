@@ -11,7 +11,9 @@
 // BaseURL yerine theme URL sadece asset için (rule 8)
 $assetURL = isset($assetURL) ? $assetURL : $this->themeURL;
 $toplam = is_array($param) ? count($param) : 0;
-$br_title = $toplam > 0 ? $param[$toplam - 1]["title"] : "";
+$br_title = isset($br_title) && $br_title !== ""
+    ? $br_title
+    : ($toplam > 0 ? $param[$toplam - 1]["title"] : "");
 $br_img_src = !empty($br_image) ? $br_image : ($assetURL . 'img/breadcrumb/br-img-2.png');
 $br_extra_class = !empty($br_class) ? ' ' . $this->temizle($br_class) : '';
 ?>

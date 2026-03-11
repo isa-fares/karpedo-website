@@ -57,7 +57,7 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
     <!-- İletişim Formu ve Harita -->
     <!-- ================================================ -->
     <div class="pt-120">
-        <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-8">Karpedo Dondurma</h6>
+        <h6 class="section-subtitle fs-20 fw-light text_primary text-center mb-8">Karpedo Dondurma ile</h6>
         <h2 class="section-title style-one fw-normal text-title text-center mb-45">Bizimle İletişime Geçin
         </h2>
         <div class="row">

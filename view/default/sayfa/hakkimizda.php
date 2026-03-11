@@ -20,54 +20,48 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
 <!-- ================================================ -->
 <!-- Hakkımızda İçerik -->
 <!-- ================================================ -->
-<section class="about-area style-one ptb-120">
-    <div class="container style-one">
-        <div class="row align-items-center">
+<section class="about-area style-one " style="padding-top:40px">
+    <div class="container style-one content-detail">
+        <div class="row ">
             <div class="col-lg-6 pe-xxl-2">
                 <div class="about-img-wrap position-relative z-1 overflow-hidden mb-md-30">
                     <img src="<?= $assetURL ?>img/about/about-1.jpg" alt="Image" class="about-img">
                 </div>
+                <div class="featured-product style-three position-relative overflow-hidden z-1 d-flex flex-wrap align-items-center round-20 mt-25" style="min-height: 200px;">
+                    <div class="feature-product-bg bg-3 position-absolute top-0 start-0 w-100 h-100 z-n1transition"></div>
+                    <div class="counter-card-wrap d-flex flex-wrap justify-content-between position-relative z-1 p-30 w-100">
+                        <div class="counter-card style-one mb-0 ms-4 ms-md-5 me-4 me-md-5 text-center">
+                            <div class="counter-card-icon">
+                                <img src="<?= $assetURL ?>img/establishment.png" alt="Kuruluş" class="counter-icon-img" style="margin-bottom: 0px;">
+                            </div>
+                            <h4 class="fw-normal fs-36 text-title"><span class="transition" style="font-size:2rem;">1995</span></h4>
+                            <p class="fs-xxl-18 fw-normal d-block mb-0" style="margin: 0px;">Kuruluş</p>
+                        </div>
+                        <div class="counter-card style-one mb-0 ps-xxl-4 text-center">
+                            <div class="counter-card-icon">
+                                <img src="<?= $assetURL ?>img/map.png" alt="m² Alanda Üretim" class="counter-icon-img"  style="margin-bottom: 0px;">
+                            </div>
+                            <h4 class="fw-normal fs-36 text-title"><span class="transition" style="font-size:2rem;">10.000</span></h4>
+                            <p class="fs-xxl-18 fw-normal d-block mb-0" style="margin: 0px;">m² Alanda Üretim</p>
+                        </div>
+                        <div class="counter-card style-one mb-0 ps-xxl-4 ms-4 ms-md-5 me-4 me-md-5 text-center" >
+                            <div class="counter-card-icon">
+                                <img src="<?= $assetURL ?>img/ice-cream-cup.png" alt="Çeşit Dondurma" class="counter-icon-img"  style="margin-bottom: 0px;">
+                            </div>
+                            <h4 class="fw-normal fs-36 text-title"><span class="transition" style="font-size:2rem;">200</span></h4>
+                            <p class="fs-xxl-18 fw-normal d-block mb-0" style="margin: 0px;">Çeşit Dondurma</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 ps-xxl-50 pe-xxl-1">
                 <div class="about-content ps-xxl-5">
-                    <h6 class="section-subtitle fs-20 fw-light text_primary mb-8">Karpedo Hakkında</h6>
-                    <h2 class="section-title style-one fw-normal text-title mb-15">Dondurma ustalarının
-                        mahir ellerinde benzersiz bir lezzete ulaşan tat</h2>
-                    <p class="mb-25">Firmamız Kahramanmaraş Dulkadiroğlu’nda 100 m2 alanda 1995 yılında
-                        Kahramanmaraş dondurması üretimine başlayıp bugün 10.000 m2 alanda, 33 çeşit
-                        dondurma üretimi yapmaktadır.</p>
-                    <div class="counter-card-wrap d-flex flex-wrap justify-content-between mb-15">
-                        <div class="counter-card style-one mb-25">
-                            <h4 class="fw-normal fs-36 text-title mb-10"><span
-                                    class="transition">1995</span></h4>
-                            <p class="fs-xxl-18 fw-normal d-block mb-0">Kuruluş</p>
-                        </div>
-                        <div class="counter-card style-one mb-25 ps-xxl-4">
-                            <h4 class="fw-normal fs-36 text-title mb-10"><span
-                                    class="transition">10.000</span>
-                            </h4>
-                            <p class="fs-xxl-18 fw-normal d-block mb-0">m² Alanda Üretim</p>
-                        </div>
-                        <div class="counter-card style-one mb-25 ps-xxl-4">
-                            <h4 class="fw-normal fs-36 text-title mb-10"><span class="transition">33</span>
-                            </h4>
-                            <p class="fs-xxl-18 fw-normal d-block mb-0">Çeşit Dondurma</p>
-                        </div>
-                    </div>
-                    <div class="row mb-20">
-                        <div class="col-xl-6 col-lg-12 col-md-6 mb-20">
-                            <ul class="feature-list style-one list-unstyled">
-                                <li class="position-relative font-secondary fw-normal fs-xxl-18 text-title">
-                                    <img src="<?= $assetURL ?>img/icons/badge-violet.svg" alt="Icon">Yapay katkı
-                                    maddelerinden uzak
-                                </li>
-                                <li class="position-relative font-secondary fw-normal fs-xxl-18 text-title">
-                                    <img src="<?= $assetURL ?>img/icons/badge-violet.svg" alt="Icon">Doğanın
-                                    kalbinden gelen saflık
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h2 class="section-title style-one fw-normal text-title mb-15">
+                        <?= $this->hakkimizdaTitle() ?>
+
+                    </h2>
+                    <p class="mb-25"><?= $this->hakkimizdaContent() ?></p>
+
                 </div>
             </div>
         </div>
@@ -78,17 +72,7 @@ $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-7.png');
 <!-- Özel Dondurma Ustaları / Misyon Kartları -->
 <!-- ================================================ -->
 <div class="container style-one pb-90">
-    <div class="row align-items-center mb-45">
-        <div class="col-xl-6 col-lg-7 mb-md-10">
-            <h6 class="section-subtitle fs-20 fw-light text_primary mb-10">Our Mission</h6>
-            <h2 class="section-title style-one fw-normal text-title mb-0">Özel Dondurma Ustaları</h2>
-        </div>
-        <div class="col-xxl-4 offset-xxl-2 col-xl-5 offset-xl-1 col-lg-5">
-            <p class="mb-0">Kahramanmaraş dondurmasının 300 yıllık özel tarifi ve yapımını bilen geleneksel
-                ustalarımız ile akademik kısımda bulunan gıda mühendislerimizin bilgilerinin harmanlanması
-                ile Karpedo Dondurmanın tadına tad, gücüne güç katmıştır.</p>
-        </div>
-    </div>
+
     <div class="row justify-content-center gx-xxl-18" style="row-gap: 30px;">
         <div class="col-xl-4 col-md-6">
             <div class="mission-card style-one br-hover-one position-relative z-1 round-20 mb-30">

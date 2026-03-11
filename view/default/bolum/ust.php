@@ -90,6 +90,12 @@ $active = function($pages) use ($nav_page) { return in_array($nav_page, (array)$
                         </nav>
                     </div>
                     <div class="other-options d-flex flex-wrap align-items-center justify-content-end">
+                        <div class="switch-theme-mode switch-in-header">
+                            <label id="switch" class="switch">
+                                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
                         <div class="option-item">
                             <ul class="option-list d-flex flex-wrap align-items-center list-unstyled mb-0">
                                 <li>

@@ -72,6 +72,9 @@ class Ayar extends Settings {
             $tabForm[$dil]['text'] .= $form->input(array('value' => $this->get_element('firma_'.$dil),'title'=>'Firma Adı','name'=>'firma','lang'=>$dil));
             //$tabForm[$dil]['text'] .= $form->input(array('value' => $this->get_element('unvan_'.$dil),'title'=>'Firma Ünvanı','name'=>'unvan','id'=>'unvan','lang'=>$dil));
             $tabForm[$dil]['text'] .= $form->textEditor(array('value'=>$this->get_element('kisaca_'.$dil),'title'=>'Anasayfa Hakkımızda Alanı',"id"=>"kisaca", 'name'=>'kisaca','lang'=>$dil,'height' => '183'));
+            $tabForm[$dil]['text'] .= $form->textEditor(array('value' => $this->get_element('hakkimizda_title_' . $dil), 'title' => 'Hakkımızda Başlık Alanı', 'id' => 'hakkimizda_title_' . $dil, 'name' => 'hakkimizda_title', 'lang' => $dil, 'height' => '183'));
+            $tabForm[$dil]['text'] .= $form->textEditor(array('value' => $this->get_element('hakkimizda_content_' . $dil), 'title' => 'Hakkımızda İçerik Alanı', 'id' => 'hakkimizda_content_' . $dil, 'name' => 'hakkimizda_content', 'lang' => $dil, 'height' => '183'));
+
         endforeach;
         $text .= $tabs->tabContent($tabForm);
 

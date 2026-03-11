@@ -42,9 +42,8 @@ $br_param = [
     ["title" => $this->lang->header("index") ?: "Anasayfa", "href" => $this->langURL("index")],
     ["title" => "Blog", "href" => $this->langURL("blog")],
     ["title" => $baslik],
-
 ];
-        $this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png');
+$this->breadcrumb($br_param, $assetURL . 'img/breadcrumb/br-img-1.png', 'br-sm');
         ?>
 
 

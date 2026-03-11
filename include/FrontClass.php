@@ -556,9 +556,15 @@ class FrontClass extends Mail
         echo $this->_include('bolum/files',["param"=>$param],$this->theme);
     }
 
-    /** @param array $param breadcrumb maddeleri. @param string|null $br_image isteğe bağlı sağdaki görsel URL. @param string|null $br_class isteğe bağlı wrapper CSS sınıfı (örn. sayfa özel stilleri) */
-    public function breadcrumb($param = array(), $br_image = null, $br_class = null){
-        echo $this->_include('bolum/breadcrumb', ["param" => $param, "lang" => $this->pageLang, "br_image" => $br_image, "br_class" => $br_class], $this->theme);
+    /** @param array $param breadcrumb maddeleri. @param string|null $br_image isteğe bağlı sağdaki görsel URL. @param string|null $br_class isteğe bağlı wrapper CSS sınıfı (örn. sayfa özel stilleri). @param string|null $br_title breadcrumb başlığı (varsayılan: son madde başlığı) */
+    public function breadcrumb($param = array(), $br_image = null, $br_class = null, $br_title = null){
+        echo $this->_include('bolum/breadcrumb', [
+            "param" => $param,
+            "lang" => $this->pageLang,
+            "br_image" => $br_image,
+            "br_class" => $br_class,
+            "br_title" => $br_title
+        ], $this->theme);
     }
 
     /** Instagram galeri slider; $foto_galeri verilmezse bileşen içinde çekilir (rule 12) */
@@ -1779,7 +1785,15 @@ EOT;
         return $this->temizle($this->ayarlar("kisaca_".$lang));
     }
 
+    public function hakkimizdaTitle(){
+        $lang = $this->pageLang;
+        return $this->temizle($this->ayarlar("hakkimizda_title_" . $lang));
+    }
 
+    public function hakkimizdaContent(){
+        $lang = $this->pageLang;
+        return $this->temizle($this->ayarlar("hakkimizda_content_" . $lang));
+    }
 
 
     /**

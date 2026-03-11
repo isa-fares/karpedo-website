@@ -1970,6 +1970,41 @@ body {
     color: var(--primaryColor);
 }
 
+/* Breadcrumb küçük metin (blog detay vb.) */
+.breadcrumb-area.br-sm .br-title {
+    font-size: 24px;
+    line-height: 1.35;
+}
+.breadcrumb-area.br-sm .br-menu li {
+    font-size: 14px;
+}
+.breadcrumb-area.br-sm .br-menu li:after {
+    font-size: 12px;
+}
+
+/* أيقونات عدادات Hakkımızda */
+.featured-product .counter-card .counter-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.35rem;
+}
+.featured-product .counter-card .counter-icon-img {
+    width: 48px;
+    height: auto;
+    object-fit: contain;
+}
+/* تقليل المسافة بين الرقم والنص في عدادات Hakkımızda */
+.featured-product .counter-card h4 {
+    margin-bottom: 0.35rem;
+}
+.featured-product .counter-card h4 + p {
+    margin-top: 0;
+}
+.featured-product .counter-card p {
+    margin-bottom: 0;
+}
+
 /*------------------------------------------------
         Hero Section CSS
 ------------------------------------------------*/
@@ -2143,6 +2178,11 @@ body {
     width: calc(100% - 100px);
 }
 
+.hero-area.style-two .hero-slider-wrap.style-one .hero-slider-one .swiper-slide:nth-child(3) .hero-slide-item img {
+    max-width: 70%;
+    height: auto;
+}
+
 .hero-area.style-two .hero-slider-wrap.style-one .hero-slider-one .hero-slide-item .product-card {
     position: absolute;
     bottom: 20px;
@@ -2262,7 +2302,7 @@ body {
 }
 
 .about-area.style-one .about-img-wrap img {
-    border-radius: 30px 30px 30px 0;
+    border-radius: 10px 10px 10px 0;
 }
 
 .about-area.style-one .about-img-wrap .feature-list {
@@ -3429,7 +3469,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-
+.about-area.style-one .about-img-wrap img
 .featured-product.style-three .feature-product-bg.bg-1 {
     background-image: url(../img/featured/feature-4.jpg);
     background-color: #CDB8E3;
@@ -3438,6 +3478,14 @@ body {
 .featured-product.style-three .feature-product-bg.bg-2 {
     background-image: url(../img/featured/feature-5.jpg);
     background-color: #F1DDC4;
+}
+.featured-product.style-three .feature-product-bg.bg-3 {
+    background-color: #F1DDC4;
+    border-radius: 0px 20px 0 0;
+}
+
+img.about-img {
+    margin: 0 0 30px 0;
 }
 
 .featured-product.style-three .featured-product-info {

@@ -32,8 +32,10 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="hero-content mb-lg-30">
-                    <h6 class="section-subtile fs-xxl-20 fw-light text_primary mb-6">Karpedo Dondurma</h6>
-                    <h1>Kendinize Bir Tatlılık Yapın</h1>
+                    <h6 class="section-subtile fs-xxl-20 fw-light text_primary mb-6">Karpedo Dondurma ile</h6>
+                    <h1>Kendinize
+                        <br>
+                         Bir Tatlılık Yapın</h1>
                     <p class="fs-xxl-18 pe-xl-5">El yapımı dondurmanın verdiği mutluluk gibisi yoktur; biz
                         de Karpedo olarak bu deneyimi en üst seviyeye taşıyoruz. En kaliteli malzemelerle,
                         geleneksel yöntemlerle hazırladığımız her bir kaşıkta gerçek lezzeti sunuyoruz.</p>
@@ -121,16 +123,17 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
                         <div class="swiper-slide">
                             <div class="category-card style-one text-center mb-30">
                                 <div class="category-img position-relative rounded-circle d-block mx-auto transition">
-                                    <a href="<?=  $kategori_url ?>" class="position-absolute top-0 start-0 w-100 h-100">
-                                    <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
+                                    <a href="<?= $kategori_url ?>" class="position-absolute top-0 start-0 w-100 h-100">
+                                        <img src="<?= $kategori_image ?>" alt="<?= $kategori_title ?>" class="rounded-circle transition">
                                     </a>
                                 </div>
                                 <h3 class="fs-24 fw-normal">
-                                <a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition">
-                                    <?= $kategori_title ?>
-                                    <br>
-                                    Dondurma
-                                </a></h3>
+                                    <a href="<?= $kategori_url ?>" class="text-title link-hover-primary transition">
+                                        <?= $kategori_title ?>
+                                        <br>
+                                        Dondurma
+                                    </a>
+                                </h3>
 
                             </div>
                         </div>
@@ -204,7 +207,7 @@ $blogs = $this->dbLangSelect("blog", "aktif = 1 AND sil = 0 AND baslik <> ''", "
         <img src="<?= $assetURL ?>img/discount/discount-product-3.png" alt="Image" class="offer-img-one z-n1">
         <div class="container text-center">
             <div class="ft_inner">
-               <h6 class="section-subtile fs-20 fw-light text_primary mb-10">Herkes İçin Bir Şey</h6>
+                <h6 class="section-subtile fs-20 fw-light text_primary mb-10">Herkes İçin Bir Şey</h6>
 
                 <h2 class="section-title style-one fw-normal text-title mb-15">Dondurma ustalarının mahir
                     ellerinden benzersiz bir lezzet... </h2>

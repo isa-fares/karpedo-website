@@ -1,11 +1,23 @@
 /*-------------------------------
     Dark Theme  CSS
 -------------------------------*/
+/* المفتاح الثابت (إن وُجد) – يُخفى عند السكرول لأن المفتاح يظهر في الهيدر */
 .switch-theme-mode {
   position: fixed;
   top: 200px;
   right: 15px;
   z-index: 99;
+}
+/* مفتاح الثيم داخل الهيدر – يظهر فقط بعد السكرول (sticky) */
+.navbar-area .switch-theme-mode.switch-in-header {
+  position: static;
+  top: auto;
+  right: auto;
+  display: none;
+  margin-left: 0.5rem;
+}
+.navbar-area.sticky .switch-theme-mode.switch-in-header {
+  display: block;
 }
 
 .switch {
@@ -768,6 +780,11 @@ input:checked + .slider:before {
 }
 .theme-dark .about-area.style-three .about-content .counter-card-wrap {
   background-color: var(--aztechColor);
+}
+/* Hakkımızda: أرقام العدادات تبقى سوداء في الدارك */
+.theme-dark .featured-product .counter-card h4,
+.theme-dark .featured-product .counter-card h4 span {
+  color: #000 !important;
 }
 .theme-dark .corner-shape-left {
   background-color: var(--titleColor);

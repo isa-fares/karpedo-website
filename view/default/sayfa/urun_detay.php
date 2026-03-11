@@ -23,6 +23,7 @@ $ek_resim = $ek_resim ?: $assetURL . 'img/breadcrumb/br-img-2.png';
 $sayfa = "urun_detay";
 $this->sayfaBaslik = $urun_baslik . " - " . $this->ayarlar("title_" . $lang);
 $urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]), "baslik", "", "ORDER BY sira DESC, id DESC");
+$kategori_url = $this->getURL($urunuKategori, "urunler", $lang, 1);
 
 
 // ============================================
@@ -32,9 +33,10 @@ $urunuKategori = $this->dbLangSelectRow("kategori", array("id" => $urun["kid"]),
 $br_param = [
     ["title" => $this->lang->header("index") ?: "Anasayfa", "href" => $this->langURL("index")],
     ["title" => "Ürünler", "href" => $this->langURL("urunler")],
+    ["title" => $urunuKategori["baslik"], "href" => $kategori_url],
     ["title" => $urun_baslik],
 ];
-$this->breadcrumb($br_param, $ek_resim);
+$this->breadcrumb($br_param, $ek_resim, null, $urun_baslik);
 ?>
 
 <!-- ================================================ -->
@@ -69,7 +71,7 @@ $this->breadcrumb($br_param, $ek_resim);
 <div class="detail_pink">
 
     <div class="container style-one pb-90">
-        <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Karpedo Dondurma</h6>
+        <h6 class="section-subtile fs-20 fw-light text_primary text-center mb-10">Karpedo Dondurma ile</h6>
         <h2 class="section-title style-one fw-normal text-title text-center mb-45">Diğer Ürünlerimiz</h2>
         <div class="row justify-content-center">
 
